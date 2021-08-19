@@ -1,3 +1,4 @@
+
 'use strict'
 import react from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -16,3 +17,21 @@ class App extends react.Component{
   }
 }
 export default App
+
+import React, { Component } from 'react'
+import Footer from './Footer'
+import Header from './Header'
+
+ class App extends Component {
+  render() {
+    return (
+      <div>
+        <Header/>
+        <Footer/>
+      </div>
+    )
+  }
+}
+
+export default App
+
