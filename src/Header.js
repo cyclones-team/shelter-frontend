@@ -1,21 +1,22 @@
 import React, { Component } from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css';
-import {Navbar,Nav , Container} from 'react-bootstrap';
- class Header extends Component {
+import './footer.css';
+class Header extends Component {
     render() {
         return (
-            <div>
-   <Navbar bg="primary" variant="dark">
-    <Container>
-    <Navbar.Brand href="#home">Home</Navbar.Brand>
-    <Nav className="me-auto">
-      <Nav.Link href="#home">Profile</Nav.Link>
-      <Nav.Link href="#features">About us</Nav.Link>
-      <Nav.Link href="#pricing">Take action</Nav.Link>
-    </Nav>
-    </Container>
-  </Navbar>
-            </div>
+
+<div>
+<div class="header-items">
+                <div class="border1"></div> 
+                  <ul>
+                    <a href="#"><li>Home</li></a>
+                    <a href="#"><li>Profile</li></a>
+                    <a href="#"><li>About us</li></a>
+                    <a href="#"><li>Take Action</li></a>
+                  </ul>
+              </div>
+</div>
+
         )
     }
 }
