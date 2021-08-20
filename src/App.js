@@ -1,37 +1,20 @@
 
-'use strict'
-import react from 'react'
-import 'bootstrap/dist/css/bootstrap.min.css';
-import Hero from './components/Hero.component';
-import Animal from './components/AnimalCards.component'
+import react from "react";
+import "bootstrap/dist/css/bootstrap.min.css";
+import Main from "./components/Main";
+import Footer from "./Footer";
+import Header from "./Header";
 
-class App extends react.Component{
-  render(){
-    return(
-      <>
-      <Hero/>
-      <Animal/>
-      
-      </>
-    )
-  }
-}
-export default App
-
-import React, { Component } from 'react'
-import Footer from './Footer'
-import Header from './Header'
-
- class App extends Component {
+class App extends react.Component {
   render() {
     return (
-      <div>
-        <Header/>
-        <Footer/>
-      </div>
-    )
+      <>
+        <Header />
+        <Main/>
+        <Footer />
+      </>
+    );
   }
 }
 
-export default App
-
+export default App;
