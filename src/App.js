@@ -8,6 +8,7 @@ import Charity from "./components/Charity";
 import { Container ,Row } from "react-bootstrap";
 import TakeAction from "./components/TakeAction";
 
+
 class App extends react.Component {
   render() {
     return (
