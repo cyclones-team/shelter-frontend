@@ -2,8 +2,7 @@ import react from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 // import axios from 'axios';
 import { Card, Col, Container, Row } from "react-bootstrap";
-import Header from '../Header'
-import Footer from '../Footer'
+
 
 
 class AnimalCards extends react.Component {
@@ -32,7 +31,7 @@ class AnimalCards extends react.Component {
   render() {
     return (
       <>
-        <Header />
+        
         <p style={{ marginLeft: '5%', width: '30%', padding: '0.5%', border: '2px solid black', fontSize: '130%' }}>Title For Something</p>
         <Container>
           <p style={{ textAlign: 'center', padding: '3%', fontSize: '120%' }}>Charities you may help</p>
@@ -52,7 +51,7 @@ class AnimalCards extends react.Component {
             ))}
           </Row>
         </Container>
-        <Footer />
+        
       </>
     );
   }

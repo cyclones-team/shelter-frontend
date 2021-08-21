@@ -1,13 +1,10 @@
 import React, { Component } from "react";
 import { Container, Row, Col, Image, Card, ListGroup } from "react-bootstrap";
-import Header from "../Header"
-import Footer from "../Footer"
-
 export class Profile extends Component {
   render() {
     return (
       <>
-      <Header />
+      
         <Container fluid className="m-5 p-15 ">
           <Row className="mb-5 justify-content-center">
             <Col style={{ width: "20rem" }}>
@@ -45,7 +42,7 @@ export class Profile extends Component {
             </Card>
           </Row>
         </Container>
-        <Footer/>
+        
       </>
     );
   }

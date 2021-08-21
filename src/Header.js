@@ -4,10 +4,13 @@ import { Navbar, Container, Nav } from "react-bootstrap";
 import { withAuth0 } from '@auth0/auth0-react';
 import Login from './components/Login'
 import Logout from './components/Logout'
+import {Link,BrowserRouter} from "react-router-dom"
+import {withRouter} from 'react-router';
 class Header extends Component {
   render() {
     return (
       <div>
+        <BrowserRouter>
         <Navbar className="mb-3" bg="dark" variant="dark">
           <Container>
             <Navbar.Brand href="#home">
@@ -28,16 +31,18 @@ class Header extends Component {
                 style={{ maxHeight: "100px" }}
                 navbarScroll
               >
-                <Nav.Link href="#action1">Home</Nav.Link>
-                <Nav.Link href="#action2">Take Action</Nav.Link>
-                <Nav.Link href="#action2">About Us</Nav.Link>
-                {this.props.auth0.isAuthenticated ? <Nav.Link href="#action2">Profile</Nav.Link> : <Login />}
+                <Nav.Link><Link to="/">Home</Link></Nav.Link>
+                <Nav.Link><Link to="/about">About Us</Link></Nav.Link>
+                {this.props.auth0.isAuthenticated ? <Nav.Link><Link to="/profile">Profile</Link></Nav.Link> : <Login />}
+                {this.props.auth0.isAuthenticated && <Nav.Link><Link to="/action">Take Action</Link></Nav.Link>}
                 {this.props.auth0.isAuthenticated && <Logout/>}
               </Nav>
             </Navbar.Collapse>
           </Container>
         </Navbar>
+        </BrowserRouter>
       </div>
+      
     );
   }
 }
