@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Hero from "./Hero";
 import Animal from "./Animal";
 import { Container, Row, Col } from "react-bootstrap";
+import Dogfact from "./Dogfact";
 
 
 
@@ -22,6 +23,9 @@ class Main extends Component {
           </Row>
           <Row md="auto" className="justify-content-center">
             <Animal />
+          </Row>
+          <Row className="mb-5">
+            <Dogfact />
           </Row>
           <Row className="d-flex p-2 justify-content-center m-2 mt-5">
             <Col>

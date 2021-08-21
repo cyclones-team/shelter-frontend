@@ -2,8 +2,8 @@ import React, { Component } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Navbar, Container, Nav } from "react-bootstrap";
 import { withAuth0 } from '@auth0/auth0-react';
-import Login from './components/Login'
-import Logout from './components/Logout'
+import Login from './components/LoginButton'
+import Logout from './components/LogoutButton'
 class Header extends Component {
   render() {
     return (
