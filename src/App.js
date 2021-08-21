@@ -1,4 +1,3 @@
-
 import react from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Main from "./components/Main";
@@ -8,32 +7,14 @@ import Charity from "./components/Charity";
 import { Container, Row } from "react-bootstrap";
 import TakeAction from "./components/TakeAction";
 import Profile from "./components/Profile";
-
+import IsLoading from "./components/IsLoading";
 
 class App extends react.Component {
   render() {
     return (
-
       <>
-        <Header />
-        <Main />
-        <Footer />
-
-
-       <>
-       {/* <Header />
-       <Main/>
-
-    <Footer /> */}
- {/* <TakeAction/> */}
- <Profile/>
-
-    <Footer />
- {/* <TakeAction/>  */}
-
-   
-
-      </>
+      <IsLoading/>
+        </>
     );
   }
 }
