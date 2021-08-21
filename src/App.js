@@ -8,6 +8,7 @@ import Charity from "./components/Charity";
 import { Container, Row } from "react-bootstrap";
 import TakeAction from "./components/TakeAction";
 import Profile from "./components/Profile";
+import Dogfact from "./components/Dogfact";
 
 
 class App extends react.Component {
@@ -19,23 +20,23 @@ class App extends react.Component {
         <Main />
         <Footer />
 
-
-       <>
-       {/* <Header />
+{/* <Dogfact/> */}
+       
+          {/* <Header />
        <Main/>
 
     <Footer /> */}
- {/* <TakeAction/> */}
- <Profile/>
+          {/* <TakeAction/> */}
+          {/* <Profile />
 
-    <Footer />
- {/* <TakeAction/>  */}
+          <Footer /> */}
+          {/* <TakeAction/>  */}
 
-   
 
-      </>
-    );
+
+        </>
+        );
   }
 }
 
-export default App;
+        export default App;
