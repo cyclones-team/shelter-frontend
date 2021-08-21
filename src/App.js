@@ -16,9 +16,14 @@ class App extends react.Component {
        <>
        {/* <Header />
        <Main/>
+
     <Footer /> */}
  {/* <TakeAction/> */}
  <Profile/>
+
+    <Footer />
+ {/* <TakeAction/>  */}
+
    
       </>
     );
