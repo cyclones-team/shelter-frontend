@@ -5,7 +5,6 @@ import { withAuth0 } from '@auth0/auth0-react';
 import Login from './components/Login'
 import Logout from './components/Logout'
 import {Link,BrowserRouter} from "react-router-dom"
-import {withRouter} from 'react-router';
 class Header extends Component {
   render() {
     return (
