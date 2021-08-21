@@ -8,7 +8,7 @@ export class Profile extends Component {
     return (
       <>
       <Header />
-        <Container fluid className="m-5 p-15 ">
+        <Container fluid className="m-5">
           <Row className="mb-5 justify-content-center">
             <Col style={{ width: "20rem" }}>
               <Image
