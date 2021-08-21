@@ -4,13 +4,11 @@ import Animal from "./Animal";
 import { Container, Row, Col } from "react-bootstrap";
 
 
-
-
 class Main extends Component {
+  
   render() {
     return (
       <>
-      
         <Container fluid>
           <Row className="mb-5">
             <Hero />
@@ -39,7 +37,11 @@ class Main extends Component {
               </p>
             </Col>
             <Col md="auto">
-              <img src="https://via.placeholder.com/300x300/0000" alt="" opacity="0.5" />
+              <img
+                src="https://via.placeholder.com/300x300/0000"
+                alt=""
+                opacity="0.5"
+              />
             </Col>
           </Row>
         </Container>

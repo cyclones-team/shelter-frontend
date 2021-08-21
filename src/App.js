@@ -13,7 +13,7 @@ class App extends react.Component {
   render() {
     return (
       <>
-      <IsLoading/>
+      <Main/>
         </>
     );
   }
