@@ -1,7 +1,9 @@
 import React, { Component } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Navbar, Container, Nav } from "react-bootstrap";
-
+import { withAuth0 } from '@auth0/auth0-react';
+import Login from './components/Login'
+import Logout from './components/Logout'
 class Header extends Component {
   render() {
     return (
@@ -29,7 +31,8 @@ class Header extends Component {
                 <Nav.Link href="#action1">Home</Nav.Link>
                 <Nav.Link href="#action2">Take Action</Nav.Link>
                 <Nav.Link href="#action2">About Us</Nav.Link>
-                <Nav.Link href="#action2">Profile</Nav.Link>
+                {this.props.auth0.isAuthenticated ? <Nav.Link href="#action2">Profile</Nav.Link> : <Login />}
+                {this.props.auth0.isAuthenticated && <Logout/>}
               </Nav>
             </Navbar.Collapse>
           </Container>
@@ -39,4 +42,4 @@ class Header extends Component {
   }
 }
 
-export default Header;
+export default withAuth0(Header);
