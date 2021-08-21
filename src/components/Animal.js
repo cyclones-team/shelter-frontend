@@ -13,12 +13,8 @@ class Animal extends react.Component {
 
   componentDidMount = async () => {
     let url = `${process.env.REACT_APP_SREVER_URL}/endangered`;
-    console.log(url);
     axios(url)
       .then((axiosResults) => {
-        console.log("i am working");
-        console.log(axiosResults);
-
         this.setState({ endangeredData: axiosResults.data[0].endangeredAnimals });
       })
       .catch((err) => console.error(err));
@@ -26,10 +22,10 @@ class Animal extends react.Component {
   render() {
     return (
       <>
-        {this.state.endangeredData.map((element) => {
+        {this.state.endangeredData.map((element,index) => {
           return (
-            <>
-              <Col className="mb-3">
+   
+              <Col className="mb-3" key={index}>
                 <Card style={{ width: "18rem" }}>
                   <Card.Img variant="top" src={element.image_url} />
                   <Card.Body>
@@ -38,8 +34,7 @@ class Animal extends react.Component {
                     <Card.Text>Description : {element.description}</Card.Text>
                   </Card.Body>
                 </Card>
-              </Col>
-            </>
+              </Col>       
           );
         })}
       </>

@@ -1,6 +1,6 @@
 import react from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { Carousel, Container, Row, Col } from "react-bootstrap";
+import { Carousel} from "react-bootstrap";
 
 class Hero extends react.Component {
   constructor(props) {
@@ -29,7 +29,7 @@ class Hero extends react.Component {
               alt="First slide"
             />
             <Carousel.Caption>
-              <h5></h5>
+           
               <p></p>
             </Carousel.Caption>
           </Carousel.Item>
@@ -40,7 +40,7 @@ class Hero extends react.Component {
               alt="First slide"
             />
             <Carousel.Caption>
-              <h5></h5>
+             
               <p></p>
             </Carousel.Caption>
           </Carousel.Item>
@@ -51,7 +51,7 @@ class Hero extends react.Component {
               alt="First slide"
             />
             <Carousel.Caption>
-              <h5></h5>
+            
               <p></p>
             </Carousel.Caption>
           </Carousel.Item>
@@ -62,7 +62,7 @@ class Hero extends react.Component {
               alt="First slide"
             />
             <Carousel.Caption>
-              <h5></h5>
+              
               <p></p>
             </Carousel.Caption>
           </Carousel.Item>

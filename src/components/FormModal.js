@@ -1,6 +1,6 @@
 import react from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { Modal, Button, Form, FloatingLabel,NumericInput } from 'react-bootstrap'
+import { Modal, Form, FloatingLabel,NumericInput } from 'react-bootstrap'
 
 class FormModal extends react.Component {
 constructor(props){
@@ -15,7 +15,6 @@ this.state={
   render() {
     return (
       <>
-
         <Modal show={this.state.show} onHide={this.state.handleClose}>
           <Modal.Header closeButton>
           </Modal.Header>
@@ -49,14 +48,6 @@ this.state={
             </FloatingLabel>
 
           </Modal.Body>
-          <Modal.Footer>
-            <Button variant="primary" onClick={handleClose}>
-              Save Changes
-            </Button>
-            <Button variant="primary" onClick={handleClose}>
-              Discard
-            </Button>
-          </Modal.Footer>
         </Modal>
 
       </>
