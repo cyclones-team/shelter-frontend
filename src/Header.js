@@ -10,7 +10,7 @@ class Header extends Component {
       <div>
         <Navbar className="mb-3" bg="dark" variant="dark">
           <Container>
-            <Navbar.Brand href="#home">
+            <Navbar.Brand href="/">
               <img
                 alt=""
                 src="/logo.svg"
@@ -28,10 +28,9 @@ class Header extends Component {
                 style={{ maxHeight: "100px" }}
                 navbarScroll
               >
-                <Nav.Link href="#action1">Home</Nav.Link>
-                <Nav.Link href="#action2">Take Action</Nav.Link>
-                <Nav.Link href="#action2">About Us</Nav.Link>
-                {this.props.auth0.isAuthenticated ? <Nav.Link href="#action2">Profile</Nav.Link> : <Login />}
+                <Nav.Link href="/">Home</Nav.Link>
+                <Nav.Link href="/about">About Us</Nav.Link>
+                {this.props.auth0.isAuthenticated ? <><Nav.Link href="/action">Take Action</Nav.Link><Nav.Link href="/profile">Profile</Nav.Link> </> : <Login/>}
                 {this.props.auth0.isAuthenticated && <Logout/>}
               </Nav>
             </Navbar.Collapse>

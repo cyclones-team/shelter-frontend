@@ -2,11 +2,14 @@ import React, { Component } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import rhino from "./assets/rhino.png";
 import "./aboutUs.css";
+import Header from "../Header";
+import Footer from "../Footer";
 
 export class AboutUs extends Component {
   render() {
     return (
       <>
+      <Header/>
         <Container className="mt-5 mb-6">
           <div class="container">
             <div class="row flex-center sm-no-flex">
@@ -110,7 +113,7 @@ export class AboutUs extends Component {
               </Col>
             </Row>
           </Container>
-        
+        <Footer/>
       </>
     );
   }
