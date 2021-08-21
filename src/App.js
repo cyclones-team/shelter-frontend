@@ -7,15 +7,31 @@ import Header from "./Header";
 import Charity from "./components/Charity";
 import { Container, Row } from "react-bootstrap";
 import TakeAction from "./components/TakeAction";
+import Profile from "./components/Profile";
 
 
 class App extends react.Component {
   render() {
     return (
+
       <>
         <Header />
         <Main />
         <Footer />
+
+
+       <>
+       {/* <Header />
+       <Main/>
+
+    <Footer /> */}
+ {/* <TakeAction/> */}
+ <Profile/>
+
+    <Footer />
+ {/* <TakeAction/>  */}
+
+   
 
       </>
     );
