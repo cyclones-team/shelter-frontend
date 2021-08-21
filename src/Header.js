@@ -30,8 +30,9 @@ class Header extends Component {
               >
                 <Nav.Link href="/">Home</Nav.Link>
                 <Nav.Link href="/about">About Us</Nav.Link>
-                {this.props.auth0.isAuthenticated ? <><Nav.Link href="/action">Take Action</Nav.Link><Nav.Link href="/profile">Profile</Nav.Link> </> : <Login/>}
-                {this.props.auth0.isAuthenticated && <Logout/>}
+                <Nav.Link href="/action">Take Action</Nav.Link>
+                <Nav.Link href="/profile">Profile</Nav.Link> 
+                {this.props.auth0.isAuthenticated ? <Logout/>:<Login/>}
               </Nav>
             </Navbar.Collapse>
           </Container>

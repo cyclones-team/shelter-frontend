@@ -4,21 +4,17 @@ import Animal from "./Animal";
 import { Container, Row, Col } from "react-bootstrap";
 import Dogfact from "./Dogfact";
 
-
-
-
 class Main extends Component {
   render() {
     return (
       <>
-      
         <Container fluid>
           <Row className="mb-5">
             <Hero />
           </Row>
           <Row className="mb-4 justify-content-center">
             <h1 className="text-center">
-              Catchy Title About endangered animals
+              Endangered animals
             </h1>
           </Row>
           <Row md="auto" className="justify-content-center">

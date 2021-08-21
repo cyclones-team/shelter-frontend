@@ -1,62 +1,57 @@
 import react from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 // import axios from 'axios';
-import { Card, Col, Container, Row } from "react-bootstrap";
-import Header from '../Header'
-import Footer from '../Footer'
+import { Card, Col, Row } from "react-bootstrap";
 
+import axios from "axios";
 
-class OrganizationsCards extends react.Component {
+class AnimalsCards extends react.Component {
   constructor(props) {
     super(props);
     this.state = {
-      arr: [
-        { title: "Lion", description: "King of the jungle" },
-        { title: "tiger", description: "kill mawgli" },
-        { title: "crocodile", description: "hard to kill" },
-        { title: "Lion", description: "King of the jungle" },
-        { title: "tiger", description: "kill mawgli" },
-        { title: "crocodile", description: "hard to kill" },
-        { title: "Lion", description: "King of the jungle" },
-        { title: "tiger", description: "kill mawgli" },
-        { title: "crocodile", description: "hard to kill" },
-        { title: "Lion", description: "King of the jungle" },
-        { title: "tiger", description: "kill mawgli" },
-        { title: "crocodile", description: "hard to kill" },
-      ],
+      arr: [],
     };
   }
+  componentDidMount = async () => {
+    this.getAnimals();
+  };
 
+  getAnimals =async () => {
+    let url = `${process.env.REACT_APP_SREVER_URL}/adopte`;
+    console.log(url);
+    axios(url)
+      .then((axiosResults) => {
+        // console.log("here",axiosResults);
+        if (axiosResults.data[0]) {
+          this.setState({ arr: axiosResults.data[0] });
+        }
+      })
+      .catch((err) => console.error(err));
+    console.log(this.state.charityArray);
+  }
   render() {
     return (
       <>
-        <Header />
-        <p style={{ marginLeft: '5%', width: '30%', padding: '0.5%', border: '2px solid black', fontSize: '130%' }}>Title For Something</p>
-        <Container>
-          <p style={{ textAlign: 'center', padding: '3%', fontSize: '120%' }}>Charities you may help</p>
           <Row xs={1} md={2} className="g-4">
-            {this.state.arr.map((element) => {
+            {this.state.arr.map((element,index) => {
               return (
-                <>
-                  <Col className="mb-4">
+                
+                  <Col className="mb-4" key={index}>
                     <Card>
-                      <Card.Img variant="top" src="holder.js/100px160" />
+                      <Card.Img variant="top" src="https://img.favpng.com/13/0/13/cat-computer-icons-user-profile-avatar-png-favpng-0aXfSAjB7FwDVpeuUDXvWRLzd.jpg" />
                       <Card.Body>
-                        <Card.Title>{element.title}</Card.Title>
+                        <Card.Title>Name:{element.name}</Card.Title>
                         <Card.Text>
-                         {element.description}
+                        Description: {element.description}
                         </Card.Text>
                       </Card.Body>
                     </Card>
-                  </Col>
-
-                </>
+                  </Col>       
               );
             })}</Row>
-        </Container>
-        <Footer />
+      
       </>
     );
   }
 }
-export default OrganizationsCards;
+export default AnimalsCards;
