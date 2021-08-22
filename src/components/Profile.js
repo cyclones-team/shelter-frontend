@@ -2,10 +2,9 @@ import React, { Component } from "react";
 import { Container, Row, Col, Image, Card, ListGroup } from "react-bootstrap";
 import Header from "../Header"
 import Footer from "../Footer"
-// import { withAuth0 } from "@auth0/auth0-react";
+import { withAuth0 } from "@auth0/auth0-react";
 export class Profile extends Component {
   render() {
-    // const {name , email ,picture} = this.props.auth0.user
     return (
       <>
       <Header />
@@ -13,7 +12,7 @@ export class Profile extends Component {
           <Row className="mb-5 justify-content-center">
             <Col style={{ width: "20rem" }}>
               <Image
-                src="https://via.placeholder.com/200.png/09f/fff"
+                src={this.props.auth0.user.picture}
                 roundedCircle
               />
             </Col>
@@ -21,8 +20,8 @@ export class Profile extends Component {
               <Card style={{ width: "20rem" }}>
                 <Card.Header>Your information</Card.Header>
                 <ListGroup variant="flush">
-                  <ListGroup.Item>name </ListGroup.Item>
-                  <ListGroup.Item>email </ListGroup.Item>
+                  <ListGroup.Item>name: {this.props.auth0.user.name}</ListGroup.Item>
+                  <ListGroup.Item>email: {this.props.auth0.user.email}</ListGroup.Item>
                 </ListGroup>
               </Card>
             </Col>
@@ -52,4 +51,4 @@ export class Profile extends Component {
   }
 }
 
-export default Profile;
+export default withAuth0(Profile);

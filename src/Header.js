@@ -5,43 +5,29 @@ import { withAuth0 } from '@auth0/auth0-react';
 import Login from './components/LoginButton'
 import Logout from './components/LogoutButton'
 import logo from './components/assets/logo.jpeg'
+import { Link } from "react-router-dom"
 class Header extends Component {
   render() {
     console.log(this.props);
     return (
       <div>
-        <Navbar className="mb-3" bg="dark" variant="dark">
-          <Container>
-            <Navbar.Brand href="/">
-              <img
-                alt=""
-                src={logo}
-                width="30"
-                height="30"
-                opacity="0.5"
-                className="d-inline-block align-top"
-              />{" "}
-              ZOOTOPIA
-            </Navbar.Brand>
-            <Navbar.Toggle aria-controls="navbarScroll" />
-            <Navbar.Collapse id="navbarScroll">
-              <Nav
-                className="mr-auto my-2 my-lg-0"
-                style={{ maxHeight: "100px" }}
-                navbarScroll
-              >
-                <Nav.Link href="/">Home</Nav.Link>
-                <Nav.Link href="/about">About Us</Nav.Link>
-                <Nav.Link href="/action">Take Action</Nav.Link>
-                <Nav.Link href="/profile">Profile</Nav.Link> 
-                {this.props.auth0.isAuthenticated ? <Logout/>:<Login/>}
-              </Nav>
-            </Navbar.Collapse>
-          </Container>
-        </Navbar>
+        <nav>
+          <ul>
+            <Link to="/"><li>Home</li></Link>
+            <Link to="/about"> <li>About Us</li></Link>
+            {this.props.auth0.isAuthenticated && <Link to="/action"><li>Take Action</li></Link>}
+            {this.props.auth0.isAuthenticated && <Link to="/profile"><li>Profile</li></Link>}
+            {this.props.auth0.isAuthenticated ? <Logout /> : <Login />}
+          </ul>
+        </nav>
+
       </div>
     );
   }
 }
 
 export default withAuth0(Header);
+
+
+
+
