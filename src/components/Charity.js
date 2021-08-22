@@ -1,13 +1,20 @@
 import react from 'react';
 import axios from 'axios';
 import "bootstrap/dist/css/bootstrap.min.css";
-import { Carousel, Button } from "react-bootstrap";
-
+import { Carousel, Button, Row, Col } from "react-bootstrap";
+import CharityForm from './CharityForm';
+import { withAuth0 } from '@auth0/auth0-react';
 class Charity extends react.Component {
   constructor(props) {
     super(props);
     this.state = {
       charityArray: [],
+      name:'',
+      description:'',
+      address:'',
+      website:'',
+      logo:'',
+      showModal:false,
     };
   }
   componentDidMount = async () => {
@@ -18,17 +25,47 @@ class Charity extends react.Component {
     let url = `${process.env.REACT_APP_SREVER_URL}/charity`;
     console.log(url);
     axios(url)
-      .then((axiosResults) => {
-        if (axiosResults.data[0].charities) {
-          this.setState({ charityArray: axiosResults.data[0].charities });
+      .then((axiosResults) => { console.log(axiosResults.data);
+        if (axiosResults.data.charities) {
+         
+          this.setState({ charityArray: axiosResults.data.charities });
         }
       })
       .catch((err) => console.error(err));
-    console.log(this.state.charityArray);
+
   }
+  newName = (e) => this.setState({ name: e.target.value });
+  newDescription = (e) => this.setState({ description: e.target.value });
+  newAddress = (e) => this.setState({ address: e.target.value });
+  newWeb = (e) => this.setState({ website: e.target.value });
+  newLogo = (e) => this.setState({ logo: e.target.value });
+  openModal = () => this.setState({ showModal: true });
+  closeModal = () => this.setState({ showModal: false });
+
+  addCharityHandler = async (e) => {
+    e.preventDefault();
+console.log(this.props.auth0.user.name);
+    const bodyData = {
+      name: this.state.name,
+      description: this.state.description,
+      address: this.state.address,
+      url: this.state.website,
+      logo:this.state.logo,
+    
+    };
+
+    await axios.post(`${process.env.REACT_APP_SREVER_URL}/charity`, bodyData).then((response) => {
+      console.log(response.data);
+      this.setState({
+        charityArray: response.data.charities,
+        showModal: false
+      });
+    });
+  };
   render() {
     return (
       <>
+      <Row>
       <h1 className='text-center'>Animals charities</h1>
         <Carousel style={{ width: "83%", margin: "auto" }}>
           {
@@ -59,10 +96,26 @@ class Charity extends react.Component {
               )
             })
           }
-
         </Carousel>
+        </Row>
+        <Row >
+        <Col className='justify-content-center m-4'>
+        <Button width='50%' onClick={this.openModal}>Add Your Charity</Button>
+        </Col>
+
+        <CharityForm
+        show={this.state.showModal}
+        handleClose={this.closeModal}
+        newAddress={this.newAddress}
+        newName={this.newName}
+        newDescription={this.newDescription}
+        newWeb={this.newWeb}
+        newLogo={this.newLogo}
+        addCharityHandler={this.addCharityHandler}
+        />
+        </Row>
       </>
     );
   }
 }
-export default Charity;
+export default withAuth0(Charity);

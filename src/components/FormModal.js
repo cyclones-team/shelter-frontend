@@ -3,6 +3,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { Modal, Form, FloatingLabel, NumericInput, Button } from 'react-bootstrap'
 
 class FormModal extends react.Component {
+
   constructor(props) {
     super(props);
     this.state = {
@@ -24,6 +25,15 @@ class FormModal extends react.Component {
       ]
     })
   }
+
+
+constructor(props){
+  super(props);
+this.state={
+  show:false,
+  handleClose:false
+}
+}
 
   render() {
     return (
