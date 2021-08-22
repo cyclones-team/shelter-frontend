@@ -4,8 +4,10 @@ import { Navbar, Container, Nav } from "react-bootstrap";
 import { withAuth0 } from '@auth0/auth0-react';
 import Login from './components/LoginButton'
 import Logout from './components/LogoutButton'
+import logo from './components/assets/logo.jpeg'
 class Header extends Component {
   render() {
+    console.log(this.props);
     return (
       <div>
         <Navbar className="mb-3" bg="dark" variant="dark">
@@ -13,13 +15,13 @@ class Header extends Component {
             <Navbar.Brand href="/">
               <img
                 alt=""
-                src="/logo.svg"
+                src={logo}
                 width="30"
                 height="30"
                 opacity="0.5"
                 className="d-inline-block align-top"
               />{" "}
-              React Bootstrap
+              ZOOTOPIA
             </Navbar.Brand>
             <Navbar.Toggle aria-controls="navbarScroll" />
             <Navbar.Collapse id="navbarScroll">
