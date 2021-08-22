@@ -14,7 +14,7 @@ export class Homepage extends Component {
                 headers: { "Authorization": `Bearer ${'jwt'}` },
                 method: 'get',
                 baseURL: 'http://localhost:3020',
-                url: `/auth/${this.props.auth0.user.name}`,
+                url: `/auth/renadsalem8888@gmail.com`,
             }
             axios(config)
                 .then(axiosResults => {

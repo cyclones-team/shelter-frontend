@@ -10,8 +10,6 @@ this.state={
   handleClose:false
 }
 }
-
-
   render() {
     return (
       <>

@@ -1,9 +1,17 @@
 import React, { Component } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
+
+// import { Navbar, Container, Nav } from "react-bootstrap";
+import { withAuth0 } from '@auth0/auth0-react';
+import Login from './components/LoginButton'
+import Logout from './components/LogoutButton'
+// import logo from './components/assets/logo.jpeg'
+
 import { withAuth0 } from '@auth0/auth0-react';
 import Login from './components/LoginButton'
 import Logout from './components/LogoutButton'
 import logo from './components/assets/logo2.png'
+
 import { Link } from "react-router-dom"
 import "./Header.css"
 class Header extends Component {
