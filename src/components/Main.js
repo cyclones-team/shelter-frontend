@@ -14,12 +14,13 @@ class Main extends Component {
   render() {
     return (
       <>
+      <Hero />
         <Container fluid>
-          <Row className="mb-5" style={{ height: '150vh' }}>
+          <Row className="mb-5" style={{ height: '50vh' }}>
             <>
-              <Hero />
+              
 
-              <h2 className='text-center'>Some cat's facts</h2>
+              <h2 className='text-center'>Some cat facts</h2>
               <div id="scroll-container">
                
                  {this.state.facts.map((element,index)=>(<> <div id="scroll-text"><h5 key={index}>{element}</h5></div></>))}
@@ -36,7 +37,7 @@ class Main extends Component {
             <Animal />
           </Row>
           <Row>
-            <h2 className="text-center m-4">Some Dog's Facts</h2>
+            <h2 className="text-center m-4">Some Dog Facts</h2>
           </Row>
           <Row className="mb-5">
             <Dogfact />
