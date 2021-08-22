@@ -1,0 +1,43 @@
+.header{
+  display: flex;
+  background-color: #31572C;
+  gap:28%;
+  width: 100%;
+  align-items: center;
+  
+}
+
+.logo{
+  display: flex;
+  margin-left: 2%;
+  padding:1%
+}
+
+.imgheader{
+  width: 20%;
+}
+
+.plogo{
+  font-size: 300%;
+  color: #ECF39E;
+}
+.navul{
+  display: flex;
+  justify-content:space-between;
+  width:130%;
+  font-size:130%;
+  list-style: none
+}
+
+.link{
+  color:#ECF39E;
+  text-decoration:none;
+  padding: 3%;
+  transition: 0.3s;
+}
+
+.link:hover{
+  color: #31572C;
+  background-color: #ECF39E;
+  
+}
