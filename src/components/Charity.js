@@ -9,25 +9,24 @@ class Charity extends react.Component {
     super(props);
     this.state = {
       charityArray: [],
-      name:'',
-      description:'',
-      address:'',
-      website:'',
-      logo:'',
-      showModal:false,
+      name: '',
+      description: '',
+      address: '',
+      website: '',
+      logo: '',
+      showModal: false,
     };
   }
-  componentDidMount = async () => {
+  componentDidUpdate = async () => {
     this.getCharities();
   };
 
-  getCharities =async () => {
-    let url = `${process.env.REACT_APP_SREVER_URL}/charity`;
-    console.log(url);
+  getCharities = async () => {
+    let url = `${process.env.REACT_APP_SREVER_URL}/charity/${this.props.auth0.user.email}`;
     axios(url)
-      .then((axiosResults) => { console.log(axiosResults.data);
+      .then((axiosResults) => {
         if (axiosResults.data.charities) {
-         
+
           this.setState({ charityArray: axiosResults.data.charities });
         }
       })
@@ -44,14 +43,14 @@ class Charity extends react.Component {
 
   addCharityHandler = async (e) => {
     e.preventDefault();
-console.log(this.props.auth0.user.name);
+    console.log(this.props.auth0.user.name);
     const bodyData = {
       name: this.state.name,
       description: this.state.description,
       address: this.state.address,
       url: this.state.website,
-      logo:this.state.logo,
-    
+      logo: this.state.logo,
+
     };
 
     await axios.post(`${process.env.REACT_APP_SREVER_URL}/charity`, bodyData).then((response) => {
@@ -65,54 +64,54 @@ console.log(this.props.auth0.user.name);
   render() {
     return (
       <>
-      <Row>
-      <h1 className='text-center'>Animals charities</h1>
-        <Carousel style={{ width: "83%", margin: "auto" }}>
-          {
-            this.state.charityArray.map((item, index) => {
-              return (
-                <Carousel.Item key={index} >
-                  <img
-                    className="d-block w-100"
-                    src="https://i.pinimg.com/originals/15/47/aa/1547aa8f54dd1fb3694abee485c3269a.jpg"
-                    alt="First slide"
-                  />
-                  <Carousel.Caption>
-                    <h3>{item.name}</h3>
-                    <p>{item.description}</p>
-                    <small>{item.address}</small><br />
+        <Row>
+          <h1 className='text-center'>Animals charities</h1>
+          <Carousel style={{ width: "83%", margin: "auto" }}>
+            {
+              this.state.charityArray.map((item, index) => {
+                return (
+                  <Carousel.Item key={index} >
+                    <img
+                      className="d-block w-100"
+                      src="https://i.pinimg.com/originals/15/47/aa/1547aa8f54dd1fb3694abee485c3269a.jpg"
+                      alt="First slide"
+                    />
+                    <Carousel.Caption>
+                      <h3>{item.name}</h3>
+                      <p>{item.description}</p>
+                      <small>{item.address}</small><br />
 
-                    < img src={item.logo} alt='...' /><br />
-                    <Button
-                      className='m-3'
-                      variant='outline-light '
-                      href={item.url}
-                      target="_blank"
-                    >
-                      Show more
-                    </Button>
-                  </Carousel.Caption>
-                </Carousel.Item>
-              )
-            })
-          }
-        </Carousel>
+                      < img src={item.logo} alt='...' /><br />
+                      <Button
+                        className='m-3'
+                        variant='outline-light '
+                        href={item.url}
+                        target="_blank"
+                      >
+                        Show more
+                      </Button>
+                    </Carousel.Caption>
+                  </Carousel.Item>
+                )
+              })
+            }
+          </Carousel>
         </Row>
         <Row >
-        <Col className='justify-content-center m-4'>
-        <Button width='50%' onClick={this.openModal}>Add Your Charity</Button>
-        </Col>
+          <Col className='justify-content-center m-4'>
+            <Button width='50%' onClick={this.openModal}>Add Your Charity</Button>
+          </Col>
 
-        <CharityForm
-        show={this.state.showModal}
-        handleClose={this.closeModal}
-        newAddress={this.newAddress}
-        newName={this.newName}
-        newDescription={this.newDescription}
-        newWeb={this.newWeb}
-        newLogo={this.newLogo}
-        addCharityHandler={this.addCharityHandler}
-        />
+          <CharityForm
+            show={this.state.showModal}
+            handleClose={this.closeModal}
+            newAddress={this.newAddress}
+            newName={this.newName}
+            newDescription={this.newDescription}
+            newWeb={this.newWeb}
+            newLogo={this.newLogo}
+            addCharityHandler={this.addCharityHandler}
+          />
         </Row>
       </>
     );
