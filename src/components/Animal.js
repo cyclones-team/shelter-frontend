@@ -1,7 +1,7 @@
 import react from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import axios from "axios";
-import { Container, Row, Card, Col } from "react-bootstrap";
+import {  Card, Col } from "react-bootstrap";
 
 class Animal extends react.Component {
   constructor(props) {
