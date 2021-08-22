@@ -27,24 +27,6 @@ export class Profile extends Component {
               </Card>
             </Col>
           </Row>
-          <Row className="mt-5">
-            <Card style={{ width: "30rem" }}>
-              <Card.Header>My List</Card.Header>
-              <Card.Body>
-                <blockquote className="blockquote mb-0">
-                  <p>
-                    1. Lorem ipsum dolor 
-                    2. sit amet, consectetur adipiscing
-                   
-                  </p>
-                  <footer className="blockquote-footer">
-                    Someone famous in{" "}
-                    <cite title="Source Title">Source Title</cite>
-                  </footer>
-                </blockquote>
-              </Card.Body>
-            </Card>
-          </Row>
         </Container>
         <Footer/>
       </>
