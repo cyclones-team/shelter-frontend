@@ -17,7 +17,7 @@ class Header extends Component {
         </section>
         <section>
           <nav >
-            <ul>
+            <ul className="navul">
               <Link to="/" className="link"><li>Home</li></Link>
               <Link to="/about" className="link"> <li>About Us</li></Link>
               {this.props.auth0.isAuthenticated && <Link to="/action" className="link"><li>Take Action</li></Link>}
