@@ -1,7 +1,7 @@
 import react from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import axios from 'axios';
-import { Card, Col } from "react-bootstrap";
+import axios from "axios";
+import {  Card, Col } from "react-bootstrap";
 
 class Animal extends react.Component {
   constructor(props) {
@@ -9,7 +9,7 @@ class Animal extends react.Component {
     this.state = {
       endangeredData: [],
     };
-  };
+  }
 
   componentDidMount = async () => {
     let url = `${process.env.REACT_APP_SREVER_URL}/endangered`;
