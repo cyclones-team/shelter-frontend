@@ -26,15 +26,15 @@ class AnimalsCards extends react.Component {
 
   getAnimals = async () => {
     let url = `${process.env.REACT_APP_SREVER_URL}/adopte`;
-    console.log(url);
+
     axios(url)
       .then((axiosResults) => {
         if (axiosResults.data[0]) {
+         
           this.setState({ arr: axiosResults.data[0] });
         }
       })
       .catch((err) => console.error(err));
-    console.log(this.state.charityArray);
   };
   render() {
     return (
