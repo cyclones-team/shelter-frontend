@@ -21,7 +21,7 @@
   font-size: 300%;
   color: #ECF39E;
 }
-ul{
+.navul{
   display: flex;
   justify-content:space-between;
   width:130%;
