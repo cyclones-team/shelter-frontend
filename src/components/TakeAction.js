@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import Header from '../Header';
 import Footer from '../Footer';
-import Animal from './Animal';
+import AnimalsCards from './AnimalCards';
 import { Container, Row } from 'react-bootstrap';
 import Charity from './Charity';
 
@@ -9,18 +9,18 @@ export class TakeAction extends Component {
     render() {
         return (
             <>
-<Header/>
-<Container fluid>
-    <Row className="mb-4 ">
-        <Charity/>
+                <Header />
+                <Container fluid>
+                    <Row className="mb-4 ">
+                        <Charity />
+                    </Row>
+                    <h1 className='text-center mt-5 mb-5'>pets for Adoption</h1>
+                    <Row className="justify-content-center">
+                        <AnimalsCards />
+                    </Row>
+                </Container>
+                <Footer />
 
-    </Row>
-    <Row  className="justify-content-center">
-        <Animal/>
-    </Row>
-</Container>
-<Footer/>
-                
             </>
         )
     }
