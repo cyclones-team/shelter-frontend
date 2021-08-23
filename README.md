@@ -1,9 +1,9 @@
 # Project Name :
 
 **ZOOTOPIA**
-[zootopia]()
 
-![zootopia](https://static.wikia.nocookie.net/oscars/images/b/bc/Zootopia-005.jpg/revision/latest?cb=20170129062528)
+
+
 
 ___________________________________________
 
