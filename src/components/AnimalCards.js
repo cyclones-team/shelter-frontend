@@ -3,8 +3,9 @@ import "bootstrap/dist/css/bootstrap.min.css";
 // import axios from 'axios';
 
 
-import { Card, Col, Button, Row } from "react-bootstrap";
+import { Card, Col,Button,Row } from "react-bootstrap";
 import AdobtForm from "./AdobtForm";
+
 
 import SelectedPet from "./SelectedPet";
 import axios from "axios";
@@ -62,12 +63,12 @@ class AnimalsCards extends react.Component {
   render() {
     return (
       <>
-
         {this.state.arr.map((element, index) => {
-          console.log(element);
+
           <AdobtForm show={this.state.adobtModal}
             handleAdobtClose={this.handleAdobtClose}
             submitHandler={this.submitHandler} />
+
           return (
             <Col className="mb-4" key={index}>
               <Card

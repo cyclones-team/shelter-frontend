@@ -4,6 +4,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { Carousel, Button, Row, Col } from "react-bootstrap";
 import CharityForm from './CharityForm';
 import { withAuth0 } from '@auth0/auth0-react';
+import UpdateForm from './UpdateForm';
 
 class Charity extends react.Component {
   constructor(props) {
@@ -21,7 +22,8 @@ class Charity extends react.Component {
       uwebsite: '',
       ulogo: '',
       showModal: false,
-      ushowModal: false
+      ushowModal: false,
+
     };
   }
   componentDidUpdate = async () => {
@@ -45,57 +47,49 @@ class Charity extends react.Component {
   newLogo = (e) => this.setState({ logo: e.target.value }); 
   openModal = () => this.setState({ showModal: true });
   closeModal = () => this.setState({ showModal: false });
-  //------------------------------------------------------
-  updateName = (e) => this.setState({ uname: e.target.value });
-  updatenewDescription = (e) => this.setState({ udescription: e.target.value });
-  updatenewAddress = (e) => this.setState({ uaddress: e.target.value });
-  updatenewWeb = (e) => this.setState({ uwebsite: e.target.value });
-  updatenewLogo = (e) => this.setState({ ulogo: e.target.value });
-  updateopenModal = () => this.setState({ ushowModal: true });
-  updatecloseModal = () => this.setState({ ushowModal: false });
+
+  //---------------------------------------------------
+ updateName = (e) => this.setState({ uname: e.target.value });
+ updateDescription = (e) => this.setState({ udescription: e.target.value });
+ updateAddress = (e) => this.setState({ uaddress: e.target.value });
+ updateWeb = (e) => this.setState({ uwebsite: e.target.value });
+ updateLogo = (e) => this.setState({ ulogo: e.target.value });
+ updateOpenModal = () => this.setState({ ushowModal: true });
+ updateCloseModal = () => this.setState({ ushowModal: false });
 
   addCharityHandler = async (e) => {
-    e.preventDefault();   
-    let charity={
-      name: this.state.name,
-      description: this.state.description,
-      address: this.state.address,
-      url: this.state.website,
-      logo: this.state.logo,
-    };
-     console.log(this.props.auth0.user.email);
-    await axios.post(`${process.env.REACT_APP_SREVER_URL}/charity?email=${this.props.auth0.user.email}`,charity).then((response) => {
+    e.preventDefault();;
+    console.log(this.props.auth0.user.email);
+    let url=`${process.env.REACT_APP_SREVER_URL}/charity?email=${this.props.auth0.user.email}&name=${this.state.name}&description=${this.state.description}&address=${this.state.address}&url=${this.state.website}&logo=${this.state.logo}`
+    await axios.post(url).then((response) => {
       console.log(response.data);
        this.setState({
-         charityArray:response.data.charities,
+        charityArray: response.data.charities,
+
         showModal: false
       });
     });
   };
+
   deleteCharity = (id) => {
     let url = `${process.env.REACT_APP_SREVER_URL}/charity/${id}?email=${this.props.auth0.user.email}`
     axios.delete(url).then(response => {
-      console.log(response.data)
       this.setState({
         charityArray: response.data.charities,
       })
     })
   };
-  updateCharity = async ( id) => {
-    const bodyData = {
-      name: this.state.uname,
-      description: this.state.udescription,
-      address: this.state.uaddress,
-      url: this.state.uwebsite,
-      logo: this.state.ulogo,
-    };
-    let url = `${process.env.REACT_APP_SREVER_URL}/charity/${id}?email=${this.props.auth0.user.email}`
-    await axios.put(url, bodyData).then((response) => {
+
+
+  updateCharity = async (e, id) => {
+    e.preventDefault();
+    let url =`${process.env.REACT_APP_SREVER_URL}/charity/${id}?email=${this.props.auth0.user.email}&name=${this.state.uname}&description=${this.state.udescription}&address=${this.state.uaddress}&url=${this.state.uwebsite}&logo=${this.state.ulogo}`;
+    await axios.put(url).then((response) => {
+
       this.setState({
         charityArray: response.data.charities,
         ushowModal: false
       });
-      console.log(this.state.booksArray);
     });
   };
 
@@ -138,12 +132,23 @@ class Charity extends react.Component {
                       <Button
                         className='m-3'
                         variant='outline-light '
-                        onClick={this.updateopenModal}
-                      >
+                        onClick={this.updateOpenModal}>
                         Update
                       </Button>
                     </Carousel.Caption>
+                    <UpdateForm 
+                    show={this.state.ushowModal}
+                    id={item._id}
+                    handleClose={this.updateCloseModal}
+                    newName={this.updateName}
+                    newAddress={this.updateAddress}
+                    newDescription={this.updateDescription}
+                    newWeb={this.updateWeb}
+                    newLogo={this.updateLogo}
+                    addCharityHandler={this.updateCharity}/> 
                   </Carousel.Item>
+                 
+                 
                 )
               })
             }
