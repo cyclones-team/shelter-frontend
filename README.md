@@ -2,9 +2,6 @@
 
 **ZOOTOPIA**
 
-
-
-
 ___________________________________________
 
  ## Our Project Vision 
@@ -39,3 +36,6 @@ ____________________________________________
 
 _____________________________________________________
 
+### user story :
+ User can login to website and see the Endengered Animals 
+ 
