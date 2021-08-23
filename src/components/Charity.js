@@ -56,17 +56,10 @@ class Charity extends react.Component {
  updateCloseModal = () => this.setState({ ushowModal: false });
 
   addCharityHandler = async (e) => {
-    e.preventDefault();
-    let charity={
-      name: this.state.name,
-      description: this.state.description,
-      address: this.state.address,
-      url: this.state.website,
-      logo: this.state.logo,
-    }
-    console.log(charity);
+    e.preventDefault();;
     console.log(this.props.auth0.user.email);
-    await axios.post(`${process.env.REACT_APP_SREVER_URL}/charity?email=${this.props.auth0.user.email}`,JSON.stringify(charity)).then((response) => {
+    let url=`${process.env.REACT_APP_SREVER_URL}/charity?email=${this.props.auth0.user.email}&name=${this.state.name}&description=${this.state.description}&address=${this.state.address}&url=${this.state.website}&logo=${this.state.logo}`
+    await axios.post(url).then((response) => {
       console.log(response.data);
        this.setState({
         charityArray: response.data.charities,
@@ -74,6 +67,7 @@ class Charity extends react.Component {
       });
     });
   };
+
   deleteCharity = (id) => {
     let url = `${process.env.REACT_APP_SREVER_URL}/charity/${id}?email=${this.props.auth0.user.email}`
     axios.delete(url).then(response => {
@@ -82,22 +76,18 @@ class Charity extends react.Component {
       })
     })
   };
+
   updateCharity = async (e, id) => {
     e.preventDefault();
-    const bodyData = {
-      name: this.state.updatedName,
-      status: this.state.updatedStatus,
-      description: this.state.updatedDescription,
-      email: this.props.auth0.user.email,
-    };
-    let url = `${process.env.REACT_APP_SREVER_URL}/charity/${id}?email=${this.props.auth0.user.email}`;
-    await axios.put(url, JSON.stringify(bodyData)).then((response) => {
+    let url =`${process.env.REACT_APP_SREVER_URL}/charity/${id}?email=${this.props.auth0.user.email}&name=${this.state.uname}&description=${this.state.udescription}&address=${this.state.uaddress}&url=${this.state.uwebsite}&logo=${this.state.ulogo}`;
+    await axios.put(url).then((response) => {
       this.setState({
         charityArray: response.data.charities,
         ushowModal: false
       });
     });
   };
+
   render() {
     return (
       <>

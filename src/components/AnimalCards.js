@@ -2,7 +2,7 @@ import react from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 // import axios from 'axios';
 
-import { Card, Col,Button } from "react-bootstrap";
+import { Card, Col,Button,Row } from "react-bootstrap";
 
 import SelectedPet from "./SelectedPet";
 import axios from "axios";
@@ -43,9 +43,7 @@ class AnimalsCards extends react.Component {
   render() {
     return (
       <>
-
         {this.state.arr.map((element, index) => {
-          console.log(element);
           return (
             <Col className="mb-4" key={index}>
               <Card
