@@ -52,7 +52,7 @@ class CharityForm extends Component {
                                 please enter the logo url
                             </Form.Text>
                         </Form.Group>
-                        <Button variant="primary" type="submit">
+                        <Button className="shadow" variant="success" type="submit">
                             Submit
                         </Button>
                     </Form>

@@ -1,10 +1,14 @@
 import react from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 // import axios from 'axios';
+
 import { Card, Col,Button } from "react-bootstrap";
+
 import SelectedPet from "./SelectedPet";
 import axios from "axios";
-import petPic from "./assets/petReplace.png"
+import petPic from "./assets/petReplace.png";
+import AddYourPet from "./AddYourPet";
+
 
 class AnimalsCards extends react.Component {
   constructor(props) {
@@ -39,33 +43,41 @@ class AnimalsCards extends react.Component {
   render() {
     return (
       <>
-        
-          {this.state.arr.map((element, index) => { 
-            return (
-              <Col className="mb-4" key={index}>
-                <Card className="shadow p-3 mb-5 bg-white rounded border border-success " style={{ width: "18rem" }}>
-                  <Card.Img variant="top" src={petPic} />
-                  <Card.Body>
-                    <Card.Title>{element.name}</Card.Title>
-                    <Card.Text> {element.type}</Card.Text>
-                    <Card.Text>
-                      <p className="text-primary" onClick={this.handleShow}><a>ore Details ..</a></p>
-                    </Card.Text>
-                    <Button variant="success ">Adopt this One</Button>
-                  </Card.Body>
-                </Card>
+        {this.state.arr.map((element, index) => {
+          console.log(element);
+          return (
+            <Col className="mb-4" key={index}>
+              <Card
+                className="shadow p-3 mb-5 bg-white rounded border border-success "
+                style={{ width: "18rem" }}
+              >
+                <Card.Img variant="top" src={petPic} />
+                <Card.Body>
+                  <Card.Title>{element.name}</Card.Title>
+                  <Card.Text>
+                    
+                    {element.type}: {element.breeds.primary}
+                  </Card.Text>
+                  <Card.Text>
+                    
+                    <Button  variant="link " onClick={this.handleShow}>More Details ..</Button>
+                  </Card.Text>
+                  <Button className="shadow" variant="success ">Adopt this One</Button>
+                </Card.Body>
+              </Card>
 
-                <SelectedPet
-                  title={element.name}
-                  imageUrl={petPic}
-                  description={element.description}
-                  handleClose={this.handleClose}
-                  show={this.state.showModal}
-                />
-              </Col>
-            );
-          })}
-        
+              <SelectedPet
+                title={element.name}
+                imageUrl={petPic}
+                description={element.description}
+                handleClose={this.handleClose}
+                show={this.state.showModal}
+              />
+            </Col>
+          );
+        })}
+
+        <Row><AddYourPet/></Row>
       </>
     );
   }
