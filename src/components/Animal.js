@@ -3,6 +3,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import axios from "axios";
 import {  Card, Col } from "react-bootstrap";
 
+let itemOne=[]
 class Animal extends react.Component {
   constructor(props) {
     super(props);
@@ -32,10 +33,12 @@ class Animal extends react.Component {
     return (
       <>
         {this.state.endangeredData.map((element,index) => {
+          itemOne=element;
+          console.log(itemOne)
           return (
    
               <Col className="mb-3" key={index}>
-                <Card style={{ width: "18rem" }}>
+                <Card style={{ width: "25rem" }}>
                   <Card.Img variant="top" src={element.image_url} />
                   <Card.Body>
                     <Card.Title>{element.name}</Card.Title>
@@ -44,6 +47,7 @@ class Animal extends react.Component {
                   </Card.Body>
                 </Card>
               </Col>       
+              
           );
         })}
       </>

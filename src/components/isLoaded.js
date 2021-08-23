@@ -8,7 +8,7 @@ class IsLoading extends Component {
   render() {
     return (
       <>
-        {/* this.props.auth0.isLoading ? */}
+        {this.props.auth0.isLoading ?
         <Container
           className="mt-5"
           style={{
@@ -68,7 +68,7 @@ class IsLoading extends Component {
             <h1> {this.props.auth0.error.message} </h1>
           </Row>
         </Container>
-        : this.props.children
+        : this.props.children}
       </>
     );
   }
