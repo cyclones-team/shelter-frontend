@@ -1,9 +1,10 @@
 import react from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 // import axios from 'axios';
-import { Card, Col, Row } from "react-bootstrap";
+import { Card, Col,Button } from "react-bootstrap";
 import SelectedPet from "./SelectedPet";
 import axios from "axios";
+import petPic from "./assets/petReplace.png"
 
 class AnimalsCards extends react.Component {
   constructor(props) {
@@ -30,7 +31,6 @@ class AnimalsCards extends react.Component {
     axios(url)
       .then((axiosResults) => {
         if (axiosResults.data[0]) {
-         
           this.setState({ arr: axiosResults.data[0] });
         }
       })
@@ -39,25 +39,25 @@ class AnimalsCards extends react.Component {
   render() {
     return (
       <>
-        <Row xs={1} md={2} className="g-4">
-          {this.state.arr.map((element, index) => {
+        
+          {this.state.arr.map((element, index) => { 
             return (
               <Col className="mb-4" key={index}>
-                <Card>
-                  <Card.Img
-                    variant="top"
-                    src="https://img.favpng.com/13/0/13/cat-computer-icons-user-profile-avatar-png-favpng-0aXfSAjB7FwDVpeuUDXvWRLzd.jpg"
-                    onClick={this.handleShow}
-                  />
+                <Card className="shadow p-3 mb-5 bg-white rounded border border-success " style={{ width: "18rem" }}>
+                  <Card.Img variant="top" src={petPic} />
                   <Card.Body>
-                    <Card.Title>Name:{element.name}</Card.Title>
-                    <Card.Text>Description: {element.description}</Card.Text>
+                    <Card.Title>{element.name}</Card.Title>
+                    <Card.Text> {element.type}</Card.Text>
+                    <Card.Text>
+                      <p className="text-primary" onClick={this.handleShow}><a>ore Details ..</a></p>
+                    </Card.Text>
+                    <Button variant="success ">Adopt this One</Button>
                   </Card.Body>
                 </Card>
 
                 <SelectedPet
                   title={element.name}
-                  imageUrl="https://img.favpng.com/13/0/13/cat-computer-icons-user-profile-avatar-png-favpng-0aXfSAjB7FwDVpeuUDXvWRLzd.jpg"
+                  imageUrl={petPic}
                   description={element.description}
                   handleClose={this.handleClose}
                   show={this.state.showModal}
@@ -65,7 +65,7 @@ class AnimalsCards extends react.Component {
               </Col>
             );
           })}
-        </Row>
+        
       </>
     );
   }

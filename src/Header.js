@@ -7,33 +7,52 @@ import Login from './components/LoginButton'
 import Logout from './components/LogoutButton'
 // import logo from './components/assets/logo.jpeg'
 
+import { Nav, Navbar, Container, Col, Row } from "react-bootstrap";
+
 import logo from './components/assets/logo2.png'
 
 import { Link } from "react-router-dom"
 import "./Header.css"
 class Header extends Component {
-  
+
   render() {
     console.log(this.props);
     return (
-      <div className="header">
-        <section className="logo">
-          <img src={logo} alt="" className="imgheader"></img>
-          <p className="plogo">ZOOTOPIA</p>
-        </section>
-        <section>
-          <nav >
-            <ul className="navul">
-              <Link to="/" className="link"><li>Home</li></Link>
-              <Link to="/about" className="link"> <li>About Us</li></Link>
-              {this.props.auth0.isAuthenticated && <Link to="/action" className="link"><li>Take Action</li></Link>}
-              {this.props.auth0.isAuthenticated && <Link to="/profile" className="link"><li>Profile</li></Link>}
-              {this.props.auth0.isAuthenticated ? <Logout /> : <Login />}
-            </ul>
-          </nav>
-        </section>
+      <>
+        <Navbar collapseOnSelect expand="lg" style={{ backgroundColor: "#31572C" }}>
+          <Container>
+            <Navbar.Brand style={{ fontSize: "300%", color: "#ECF39E" }}>
+              <Row>
+                <Col>  <img
+                  src={logo}
+                  width="70"
+                  height="70"
+                  className="d-inline-block align-top"
+                  alt="React Bootstrap logo"
+                /></Col>
 
-      </div>
+                <Col>ZOOTOPIA</Col>
+              </Row>
+
+            </Navbar.Brand>
+            <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+            <Navbar.Collapse id="responsive-navbar-nav">
+              <Nav className="me-auto" >
+                <Nav.Link><Link to="/" className="navlink">Home</Link></Nav.Link>
+                <Nav.Link><Link to="/about" className="navlink">About Us</Link></Nav.Link>
+
+              </Nav>
+              <Nav>
+                {this.props.auth0.isAuthenticated && <Nav.Link ><Link to="/profile" className="navlink">Profile</Link></Nav.Link>}
+                {this.props.auth0.isAuthenticated && <Nav.Link eventKey={2}>
+                  <Link to="/action" className="navlink">Take Action</Link>
+                </Nav.Link>}
+                {this.props.auth0.isAuthenticated ? <Logout /> : <Login />}
+              </Nav>
+            </Navbar.Collapse>
+          </Container>
+        </Navbar>
+      </>
     );
   }
 }

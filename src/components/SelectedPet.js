@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import { Modal } from "react-bootstrap/";
 
 export class SelectedPet extends Component {
-  
   render() {
     const { title, imageUrl, description, handleClose, show } = this.props;
     return (

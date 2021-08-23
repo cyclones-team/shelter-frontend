@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import "./footer.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFacebook, faLinkedin,faGoogle ,faGithub } from "@fortawesome/free-brands-svg-icons";
+import {Link} from "react-router-dom"
+import { withAuth0 } from '@auth0/auth0-react';
 
 export class Footer extends Component {
   render() {
@@ -15,55 +17,55 @@ export class Footer extends Component {
                   <h3>Services</h3>
                   <ul>
                     <li>
-                      <a href="#">Web design</a>
+                      <a>Adopting pets</a>
                     </li>
                     <li>
-                      <a href="#">Development</a>
+                      <a >Guiding your charity in the right hands</a>
                     </li>
                     <li>
-                      <a href="#">Hosting</a>
+                      <a >Rising awarness about endangered Animals</a>
                     </li>
                   </ul>
                 </div>
                 <div class="col-sm-6 col-md-3 item">
-                  <h3>About</h3>
+                  <h3>Explore</h3>
                   <ul>
                     <li>
-                      <a href="#">Company</a>
+                      <Link to="/"><a >Home</a></Link>
                     </li>
                     <li>
-                      <a href="#">Team</a>
+                      <Link to="/about"><a>About Us</a></Link>
                     </li>
                     <li>
-                      <a href="#">Careers</a>
+                    {this.props.auth0.isAuthenticated && <Link to="/action"><a>Take Action</a></Link>}
+                    </li>
+                    <li>
+                    {this.props.auth0.isAuthenticated && <Link to="/profile"><a>Profile</a></Link>}
                     </li>
                   </ul>
                 </div>
                 <div class="col-md-6 item text">
-                  <h3>Company Name</h3>
+                  <h3>Teaam Cyclones</h3>
                   <p>
-                    Praesent sed lobortis mi. Suspendisse vel placerat ligula.
-                    Vivamus ac sem lacus. Ut vehicula rhoncus elementum. Etiam
-                    quis tristique lectus. Aliquam in arcu eget velit pulvinar
-                    dictum vel in justo.
+                    All you need is a close look around you to realize the importance of making a move.
                   </p>
                 </div>
                 <div class="col item social">
-                  <a href="#">
+                  <a href="https://github.com/cyclones-team">
                   <FontAwesomeIcon icon={faGithub}  size="lg"/>
                   </a>
-                  <a href="#">
+                  <a href="https://www.linkedin.com/">
                     <FontAwesomeIcon icon={faLinkedin} size="lg" />
                   </a>
-                  <a href="#">
+                  <a href="https://www.facebook.com/">
                     <FontAwesomeIcon icon={faFacebook} size="lg" />
                   </a>
-                  <a href="#">
+                  <a href="https://mail.google.com/">
                     <FontAwesomeIcon icon={faGoogle} size="lg" />
                   </a>
                 </div>
               </div>
-              <p class="copyright">Company Name © 2018</p>
+              <p class="copyright">Team Cyclones @ASAC © 2021</p>
             </div>
           </footer>
         </div>
@@ -74,4 +76,4 @@ export class Footer extends Component {
   }
 }
 
-export default Footer;
+export default withAuth0(Footer);

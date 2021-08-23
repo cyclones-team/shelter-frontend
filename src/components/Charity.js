@@ -26,12 +26,10 @@ class Charity extends react.Component {
     axios(url)
       .then((axiosResults) => {
         if (axiosResults.data.charities) {
-
           this.setState({ charityArray: axiosResults.data.charities });
         }
       })
       .catch((err) => console.error(err));
-
   }
   newName = (e) => this.setState({ name: e.target.value });
   newDescription = (e) => this.setState({ description: e.target.value });
@@ -43,23 +41,30 @@ class Charity extends react.Component {
 
   addCharityHandler = async (e) => {
     e.preventDefault();
-    console.log(this.props.auth0.user.name);
     const bodyData = {
       name: this.state.name,
       description: this.state.description,
       address: this.state.address,
       url: this.state.website,
       logo: this.state.logo,
-
     };
-
-    await axios.post(`${process.env.REACT_APP_SREVER_URL}/charity`, bodyData).then((response) => {
+    console.log(this.props.auth0.user.email);
+    await axios.post(`${process.env.REACT_APP_SREVER_URL}/charity?email=${this.props.auth0.user.email}`, bodyData).then((response) => {
       console.log(response.data);
       this.setState({
         charityArray: response.data.charities,
         showModal: false
       });
     });
+  };
+  deleteCharity = (id) => {
+    let url = `${process.env.REACT_APP_SREVER_URL}/charity/${id}?email=${this.props.auth0.user.email}`
+    axios.delete(url).then(response => {
+      console.log(response.data)
+      this.setState({
+        charityArray: response.data.charities,
+      })
+    })
   };
   render() {
     return (
@@ -89,6 +94,13 @@ class Charity extends react.Component {
                         target="_blank"
                       >
                         Show more
+                      </Button>
+                      <Button
+                        className='m-3'
+                        variant='outline-light '
+                        onClick={()=>this.deleteCharity(item._id)}
+                      >
+                        Delete
                       </Button>
                     </Carousel.Caption>
                   </Carousel.Item>
