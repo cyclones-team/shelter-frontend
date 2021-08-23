@@ -2,7 +2,7 @@ import react from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 // import axios from 'axios';
 
-import { Card, Col,Button } from "react-bootstrap";
+import { Row,Card, Col,Button } from "react-bootstrap";
 
 import SelectedPet from "./SelectedPet";
 import axios from "axios";
