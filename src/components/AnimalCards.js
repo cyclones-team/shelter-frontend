@@ -49,7 +49,7 @@ class AnimalsCards extends react.Component {
                     <Card.Title>{element.name}</Card.Title>
                     <Card.Text> {element.type}</Card.Text>
                     <Card.Text>
-                      <p className="text-primary" onClick={this.handleShow}><a>ore Details ..</a></p>
+                      <p className="text-primary" onClick={this.handleShow}>more Details ..</p>
                     </Card.Text>
                     <Button variant="success ">Adopt this One</Button>
                   </Card.Body>

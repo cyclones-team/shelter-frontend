@@ -41,15 +41,14 @@ class Charity extends react.Component {
 
   addCharityHandler = async (e) => {
     e.preventDefault();
-    const bodyData = {
+    console.log(this.props.auth0.user.email);
+    await axios.post(`${process.env.REACT_APP_SREVER_URL}/charity?email=${this.props.auth0.user.email}`, {
       name: this.state.name,
       description: this.state.description,
       address: this.state.address,
       url: this.state.website,
       logo: this.state.logo,
-    };
-    console.log(this.props.auth0.user.email);
-    await axios.post(`${process.env.REACT_APP_SREVER_URL}/charity?email=${this.props.auth0.user.email}`, bodyData).then((response) => {
+    }).then((response) => {
       console.log(response.data);
       this.setState({
         charityArray: response.data.charities,
