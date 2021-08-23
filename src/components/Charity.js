@@ -4,6 +4,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { Carousel, Button, Row, Col } from "react-bootstrap";
 import CharityForm from './CharityForm';
 import { withAuth0 } from '@auth0/auth0-react';
+
 class Charity extends react.Component {
   constructor(props) {
     super(props);
@@ -14,7 +15,13 @@ class Charity extends react.Component {
       address: '',
       website: '',
       logo: '',
+      uname: '',
+      udescription: '',
+      uaddress: '',
+      uwebsite: '',
+      ulogo: '',
       showModal: false,
+      ushowModal: false
     };
   }
   componentDidUpdate = async () => {
@@ -35,24 +42,32 @@ class Charity extends react.Component {
   newDescription = (e) => this.setState({ description: e.target.value });
   newAddress = (e) => this.setState({ address: e.target.value });
   newWeb = (e) => this.setState({ website: e.target.value });
-  newLogo = (e) => this.setState({ logo: e.target.value });
+  newLogo = (e) => this.setState({ logo: e.target.value }); 
   openModal = () => this.setState({ showModal: true });
   closeModal = () => this.setState({ showModal: false });
+  //------------------------------------------------------
+  updateName = (e) => this.setState({ uname: e.target.value });
+  updatenewDescription = (e) => this.setState({ udescription: e.target.value });
+  updatenewAddress = (e) => this.setState({ uaddress: e.target.value });
+  updatenewWeb = (e) => this.setState({ uwebsite: e.target.value });
+  updatenewLogo = (e) => this.setState({ ulogo: e.target.value });
+  updateopenModal = () => this.setState({ ushowModal: true });
+  updatecloseModal = () => this.setState({ ushowModal: false });
 
   addCharityHandler = async (e) => {
-    e.preventDefault();
-    const bodyData = {
+    e.preventDefault();   
+    let charity={
       name: this.state.name,
       description: this.state.description,
       address: this.state.address,
       url: this.state.website,
       logo: this.state.logo,
     };
-    console.log(this.props.auth0.user.email);
-    await axios.post(`${process.env.REACT_APP_SREVER_URL}/charity?email=${this.props.auth0.user.email}`, bodyData).then((response) => {
+     console.log(this.props.auth0.user.email);
+    await axios.post(`${process.env.REACT_APP_SREVER_URL}/charity?email=${this.props.auth0.user.email}`,charity).then((response) => {
       console.log(response.data);
-      this.setState({
-        charityArray: response.data.charities,
+       this.setState({
+         charityArray:response.data.charities,
         showModal: false
       });
     });
@@ -66,6 +81,24 @@ class Charity extends react.Component {
       })
     })
   };
+  updateCharity = async ( id) => {
+    const bodyData = {
+      name: this.state.uname,
+      description: this.state.udescription,
+      address: this.state.uaddress,
+      url: this.state.uwebsite,
+      logo: this.state.ulogo,
+    };
+    let url = `${process.env.REACT_APP_SREVER_URL}/charity/${id}?email=${this.props.auth0.user.email}`
+    await axios.put(url, bodyData).then((response) => {
+      this.setState({
+        charityArray: response.data.charities,
+        ushowModal: false
+      });
+      console.log(this.state.booksArray);
+    });
+  };
+
   render() {
     return (
       <>
@@ -101,6 +134,13 @@ class Charity extends react.Component {
                         onClick={()=>this.deleteCharity(item._id)}
                       >
                         Delete
+                      </Button>
+                      <Button
+                        className='m-3'
+                        variant='outline-light '
+                        onClick={this.updateopenModal}
+                      >
+                        Update
                       </Button>
                     </Carousel.Caption>
                   </Carousel.Item>

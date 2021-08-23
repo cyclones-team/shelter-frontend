@@ -1,7 +1,8 @@
 import react from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 // import axios from 'axios';
-import { Card, Col, Row, Button } from "react-bootstrap";
+import { Row,Card, Col,Button } from "react-bootstrap";
+
 import SelectedPet from "./SelectedPet";
 import axios from "axios";
 import petPic from "./assets/petReplace.png";
@@ -40,6 +41,7 @@ class AnimalsCards extends react.Component {
   render() {
     return (
       <>
+
         {this.state.arr.map((element, index) => {
           console.log(element);
           return (
@@ -76,9 +78,8 @@ class AnimalsCards extends react.Component {
           );
         })}
 
-        <Row>
-          <AddYourPet />
-        </Row>
+        <Row><AddYourPet/></Row>
+
       </>
     );
   }
