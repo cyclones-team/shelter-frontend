@@ -17,13 +17,13 @@ export class Footer extends Component {
                   <h3>Services</h3>
                   <ul>
                     <li>
-                      <a>Adopting pets</a>
+                      Adopting pets
                     </li>
                     <li>
-                      <a >Guiding your charity in the right hands</a>
+                     Guiding your charity in the right hands
                     </li>
                     <li>
-                      <a >Rising awarness about endangered Animals</a>
+                     Rising awarness about endangered Animals
                     </li>
                   </ul>
                 </div>
@@ -31,16 +31,16 @@ export class Footer extends Component {
                   <h3>Explore</h3>
                   <ul>
                     <li>
-                      <Link to="/"><a >Home</a></Link>
+                      <Link to="/">Home</Link>
                     </li>
                     <li>
-                      <Link to="/about"><a>About Us</a></Link>
+                      <Link to="/about">About Us</Link>
                     </li>
                     <li>
-                    {this.props.auth0.isAuthenticated && <Link to="/action"><a>Take Action</a></Link>}
+                    {this.props.auth0.isAuthenticated && <Link to="/action">Take Action</Link>}
                     </li>
                     <li>
-                    {this.props.auth0.isAuthenticated && <Link to="/profile"><a>Profile</a></Link>}
+                    {this.props.auth0.isAuthenticated && <Link to="/profile">Profile</Link>}
                     </li>
                   </ul>
                 </div>

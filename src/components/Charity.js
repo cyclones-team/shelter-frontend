@@ -4,6 +4,8 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { Carousel, Button, Row, Col } from "react-bootstrap";
 import CharityForm from './CharityForm';
 import { withAuth0 } from '@auth0/auth0-react';
+
+let myCharity=[];
 class Charity extends react.Component {
   constructor(props) {
     super(props);
@@ -41,20 +43,22 @@ class Charity extends react.Component {
 
   addCharityHandler = async (e) => {
     e.preventDefault();
-    console.log(this.props.auth0.user.email);
-    await axios.post(`${process.env.REACT_APP_SREVER_URL}/charity?email=${this.props.auth0.user.email}`, {
+    // console.log(this.props.auth0.user.email);
+    // await axios.post(`${process.env.REACT_APP_SREVER_URL}/charity?email=${this.props.auth0.user.email}`,).then((response) => {
+    //   console.log(response.data);
+      
+    // });
+    let charity={
       name: this.state.name,
       description: this.state.description,
       address: this.state.address,
       url: this.state.website,
       logo: this.state.logo,
-    }).then((response) => {
-      console.log(response.data);
-      this.setState({
-        charityArray: response.data.charities,
+    }
+    myCharity.push(charity);
+    this.setState({
         showModal: false
       });
-    });
   };
   deleteCharity = (id) => {
     let url = `${process.env.REACT_APP_SREVER_URL}/charity/${id}?email=${this.props.auth0.user.email}`
