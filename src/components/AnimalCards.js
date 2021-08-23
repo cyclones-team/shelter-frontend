@@ -2,13 +2,14 @@ import react from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 // import axios from 'axios';
 
+
 import { Card, Col, Button, Row } from "react-bootstrap";
 import AdobtForm from "./AdobtForm";
+
 import SelectedPet from "./SelectedPet";
 import axios from "axios";
 import petPic from "./assets/petReplace.png";
 import AddYourPet from "./AddYourPet";
-
 
 class AnimalsCards extends react.Component {
   constructor(props) {
@@ -79,6 +80,7 @@ class AnimalsCards extends react.Component {
                   <Card.Title>{element.name}</Card.Title>
                   <Card.Text>
 
+
                     {element.type}: {element.breeds.primary}
                   </Card.Text>
                   <Card.Text>
@@ -86,6 +88,7 @@ class AnimalsCards extends react.Component {
                     <Button variant="link " onClick={this.handleShow}>More Details ..</Button>
                   </Card.Text>
                   <Button className="shadow" variant="success " onClick={this.handleAdobtShow}>Adopt this One</Button>
+
                 </Card.Body>
               </Card>
 
@@ -100,7 +103,9 @@ class AnimalsCards extends react.Component {
 
           );
         })}
+
         <Row><AddYourPet /></Row>
+
 
       </>
     );
