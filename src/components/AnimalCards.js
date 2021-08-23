@@ -1,14 +1,12 @@
 import react from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 // import axios from 'axios';
-
 import { Row,Card, Col,Button } from "react-bootstrap";
 
 import SelectedPet from "./SelectedPet";
 import axios from "axios";
 import petPic from "./assets/petReplace.png";
 import AddYourPet from "./AddYourPet";
-
 
 class AnimalsCards extends react.Component {
   constructor(props) {
@@ -56,14 +54,16 @@ class AnimalsCards extends react.Component {
                 <Card.Body>
                   <Card.Title>{element.name}</Card.Title>
                   <Card.Text>
-                    
                     {element.type}: {element.breeds.primary}
                   </Card.Text>
                   <Card.Text>
-                    
-                    <Button  variant="link " onClick={this.handleShow}>More Details ..</Button>
+                    <Button variant="link " onClick={this.handleShow}>
+                      More Details ..
+                    </Button>
                   </Card.Text>
-                  <Button className="shadow" variant="success ">Adopt this One</Button>
+                  <Button className="shadow" variant="success ">
+                    Adopt this One
+                  </Button>
                 </Card.Body>
               </Card>
 
@@ -77,7 +77,9 @@ class AnimalsCards extends react.Component {
             </Col>
           );
         })}
+
         <Row><AddYourPet/></Row>
+
       </>
     );
   }
