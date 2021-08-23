@@ -7,32 +7,33 @@ import Login from './components/LoginButton'
 import Logout from './components/LogoutButton'
 // import logo from './components/assets/logo.jpeg'
 
-import { Nav, Navbar, Container,Col, Row } from "react-bootstrap";
+import { Nav, Navbar, Container, Col, Row } from "react-bootstrap";
 
 import logo from './components/assets/logo2.png'
 
 import { Link } from "react-router-dom"
 import "./Header.css"
 class Header extends Component {
+
   render() {
     console.log(this.props);
     return (
       <>
-        <Navbar collapseOnSelect expand="lg" style={{backgroundColor:"#31572C"}}>
+        <Navbar collapseOnSelect expand="lg" style={{ backgroundColor: "#31572C" }}>
           <Container>
-            <Navbar.Brand style={{fontSize:"300%",color:"#ECF39E"}}>
+            <Navbar.Brand style={{ fontSize: "300%", color: "#ECF39E" }}>
               <Row>
-              <Col>  <img
-                src={logo}
-                width="70"
-                height="70"
-                className="d-inline-block align-top"
-                alt="React Bootstrap logo"
-              /></Col>
-            
-              <Col>ZOOTOPIA</Col>
+                <Col>  <img
+                  src={logo}
+                  width="70"
+                  height="70"
+                  className="d-inline-block align-top"
+                  alt="React Bootstrap logo"
+                /></Col>
+
+                <Col>ZOOTOPIA</Col>
               </Row>
-              
+
             </Navbar.Brand>
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
             <Navbar.Collapse id="responsive-navbar-nav">

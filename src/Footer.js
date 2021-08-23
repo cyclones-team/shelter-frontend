@@ -45,7 +45,7 @@ export class Footer extends Component {
                   </ul>
                 </div>
                 <div class="col-md-6 item text">
-                  <h3>Teaam Cyclones</h3>
+                  <h3>Team Cyclones</h3>
                   <p>
                     All you need is a close look around you to realize the importance of making a move.
                   </p>

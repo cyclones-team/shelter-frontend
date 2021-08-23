@@ -1,6 +1,5 @@
 import react from "react";
 import HeroImage from "./assets/aee8cb60b21f43cabea615436dd3de11.jpg"
-import {Col,Row,Container}from "react-bootstrap"
 class Hero extends react.Component {
   constructor(props) {
     super(props);

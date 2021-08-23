@@ -1,9 +1,6 @@
 # Project Name :
 
 **ZOOTOPIA**
-[zootopia]()
-
-![zootopia](https://static.wikia.nocookie.net/oscars/images/b/bc/Zootopia-005.jpg/revision/latest?cb=20170129062528)
 
 ___________________________________________
 
@@ -39,3 +36,6 @@ ____________________________________________
 
 _____________________________________________________
 
+### user story :
+ User can login to website and see the Endengered Animals 
+ 
