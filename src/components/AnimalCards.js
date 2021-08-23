@@ -43,6 +43,7 @@ class AnimalsCards extends react.Component {
   render() {
     return (
       <>
+
         {this.state.arr.map((element, index) => {
           console.log(element);
           return (
@@ -76,7 +77,6 @@ class AnimalsCards extends react.Component {
             </Col>
           );
         })}
-
         <Row><AddYourPet/></Row>
       </>
     );
