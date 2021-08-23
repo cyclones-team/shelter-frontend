@@ -16,13 +16,14 @@ class Charity extends react.Component {
       address: '',
       website: '',
       logo: '',
-      showModal: false,
       uname: '',
       udescription: '',
       uaddress: '',
       uwebsite: '',
       ulogo: '',
+      showModal: false,
       ushowModal: false,
+
     };
   }
   componentDidUpdate = async () => {
@@ -43,9 +44,10 @@ class Charity extends react.Component {
   newDescription = (e) => this.setState({ description: e.target.value });
   newAddress = (e) => this.setState({ address: e.target.value });
   newWeb = (e) => this.setState({ website: e.target.value });
-  newLogo = (e) => this.setState({ logo: e.target.value });
+  newLogo = (e) => this.setState({ logo: e.target.value }); 
   openModal = () => this.setState({ showModal: true });
   closeModal = () => this.setState({ showModal: false });
+
   //---------------------------------------------------
  updateName = (e) => this.setState({ uname: e.target.value });
  updateDescription = (e) => this.setState({ udescription: e.target.value });
@@ -63,6 +65,7 @@ class Charity extends react.Component {
       console.log(response.data);
        this.setState({
         charityArray: response.data.charities,
+
         showModal: false
       });
     });
@@ -77,10 +80,12 @@ class Charity extends react.Component {
     })
   };
 
+
   updateCharity = async (e, id) => {
     e.preventDefault();
     let url =`${process.env.REACT_APP_SREVER_URL}/charity/${id}?email=${this.props.auth0.user.email}&name=${this.state.uname}&description=${this.state.udescription}&address=${this.state.uaddress}&url=${this.state.uwebsite}&logo=${this.state.ulogo}`;
     await axios.put(url).then((response) => {
+
       this.setState({
         charityArray: response.data.charities,
         ushowModal: false
@@ -127,8 +132,7 @@ class Charity extends react.Component {
                       <Button
                         className='m-3'
                         variant='outline-light '
-                        onClick={this.updateOpenModal}
-                      >
+                        onClick={this.updateOpenModal}>
                         Update
                       </Button>
                     </Carousel.Caption>
