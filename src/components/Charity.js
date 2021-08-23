@@ -161,9 +161,10 @@ class Charity extends react.Component {
           </Carousel>
         </Row>
         <Row >
-          <Col className='justify-content-center m-4'>
-            <Button width='50%' onClick={this.openModal}>Add Your Charity</Button>
-          </Col>
+        <Col className='justify-content-center m-4'>
+        <Button className="shadow" variant="success" width='50%' onClick={this.openModal}>Add Your Charity</Button>
+        </Col>
+
 
           <CharityForm
             show={this.state.showModal}

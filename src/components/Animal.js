@@ -8,6 +8,8 @@ class Animal extends react.Component {
     super(props);
     this.state = {
       endangeredData: [],
+      itemOne:[],
+
     };
   }
 
@@ -18,8 +20,15 @@ class Animal extends react.Component {
         this.setState({ endangeredData: axiosResults.data[0].endangeredAnimals });
       })
       .catch((err) => console.error(err));
+      this.fillAnimal();
   };
+  fillAnimal=()=>{
+    this.setState({itemOne:this.state.endangeredData[0]})
+    console.log(this.state.itemOne)
+  };
+  
   render() {
+    
     return (
       <>
         {this.state.endangeredData.map((element,index) => {
