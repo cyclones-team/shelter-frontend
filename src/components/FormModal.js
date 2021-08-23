@@ -27,14 +27,6 @@ class FormModal extends react.Component {
   }
 
 
-constructor(props){
-  super(props);
-this.state={
-  show:false,
-  handleClose:false
-}
-}
-
   render() {
     return (
       <>

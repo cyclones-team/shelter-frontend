@@ -13,7 +13,7 @@ import Profile from "./components/Profile";
 import Homepage from './components/Homepage'
 // import Dogfact from "./components/Dogfact";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom"
-
+import Isloaded from "./components/isLoaded"
 
 class App extends react.Component {
   render() {
@@ -21,21 +21,23 @@ class App extends react.Component {
 
       <>
         <Router>
-          <Switch>
-            <Route path='/' exact>
-              <Homepage/>
-            </Route>
-            <Route path='/about'>
-              <AboutUs />
-            </Route>
-            <Route path='/profile'>
-              <Profile />
-            
-            </Route>
-            <Route path='/action'>
-            <TakeAction />             
-            </Route>
-          </Switch>
+          <Isloaded>
+            <Switch>
+              <Route path='/' exact>
+                <Homepage />
+              </Route>
+              <Route path='/about'>
+                <AboutUs />
+              </Route>
+              <Route path='/profile'>
+                <Profile />
+
+              </Route>
+              <Route path='/action'>
+                <TakeAction />
+              </Route>
+            </Switch>
+          </Isloaded>
         </Router>
       </>
     );

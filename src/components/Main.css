@@ -4,11 +4,16 @@ body{
 }
 #scroll-container {
 
-  height: 100px;
+  height: 200px;
   overflow: hidden;
 }
 
 #scroll-text {
+  
+  color: #ecf39e;
+  background-color: #31572C;
+  width: 30%;
+  margin-left: 35%;
   height: 100%;
   text-align: center;
   

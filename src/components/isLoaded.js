@@ -2,13 +2,13 @@ import React, { Component } from "react";
 import { withAuth0 } from "@auth0/auth0-react";
 import Loader from "react-loader-spinner";
 import { Container, Row, Image} from "react-bootstrap";
-import pitpull from "./assets/pitpull.png";
+import pitpull from "./assets/rhino.png";
 
 class IsLoading extends Component {
   render() {
     return (
       <>
-        {/* this.props.auth0.isLoading ? */}
+       { this.props.auth0.isLoading ?
         <Container
           className="mt-5"
           style={{
@@ -69,6 +69,7 @@ class IsLoading extends Component {
           </Row>
         </Container>
         : this.props.children
+          }
       </>
     );
   }
