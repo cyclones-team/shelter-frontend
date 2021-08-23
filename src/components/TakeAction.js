@@ -18,6 +18,7 @@ export class TakeAction extends Component {
                     <Row className="justify-content-center">
                         <AnimalsCards />
                     </Row>
+                    
                 </Container>
                 <Footer />
 

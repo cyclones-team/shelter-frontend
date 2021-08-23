@@ -100,7 +100,7 @@ console.log(this.props.auth0.user.name);
         </Row>
         <Row >
         <Col className='justify-content-center m-4'>
-        <Button width='50%' onClick={this.openModal}>Add Your Charity</Button>
+        <Button className="shadow" variant="success" width='50%' onClick={this.openModal}>Add Your Charity</Button>
         </Col>
 
         <CharityForm
