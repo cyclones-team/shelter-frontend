@@ -8,7 +8,7 @@ class IsLoading extends Component {
   render() {
     return (
       <>
-        {/* this.props.auth0.isLoading ? */}
+       
         <Container
           className="mt-5"
           style={{
@@ -23,7 +23,7 @@ class IsLoading extends Component {
               color="#00BFFF"
               height={400}
               width={400}
-              timeout={7000} //5 secs
+              timeout={7000} 
             />
           </Row>
           <Row

@@ -1,6 +1,5 @@
 import react from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-// import axios from 'axios';
 import { Card, Col, Container, Row } from "react-bootstrap";
 import Header from '../Header'
 import Footer from '../Footer'

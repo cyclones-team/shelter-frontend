@@ -1,6 +1,5 @@
 import react from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-// import axios from 'axios';
 import { Card, Col,Button } from "react-bootstrap";
 import SelectedPet from "./SelectedPet";
 import axios from "axios";
@@ -49,8 +48,13 @@ class AnimalsCards extends react.Component {
                     <Card.Title>{element.name}</Card.Title>
                     <Card.Text> {element.type}</Card.Text>
                     <Card.Text>
+                    
+                    {element.type}: {element.breeds.primary}
+                  </Card.Text>
+                    <Card.Text>
                       <p className="text-primary" onClick={this.handleShow}><a>ore Details ..</a></p>
                     </Card.Text>
+
                     <Button variant="success ">Adopt this One</Button>
                   </Card.Body>
                 </Card>

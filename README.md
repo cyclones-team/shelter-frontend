@@ -38,4 +38,7 @@ _____________________________________________________
 
 ### user story :
  User can login to website and see the Endengered Animals 
+ user can read informations about Endengered Animals 
+ user can connect with Any Charity for helping animals 
+ 
  
