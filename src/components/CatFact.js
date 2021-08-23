@@ -1,6 +1,6 @@
 import react from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { Container, Card, Row, Col, Carousel } from "react-bootstrap";
+import { Container, Card, Carousel } from "react-bootstrap";
 import catFact from "./assets/cat.json";
 import "./dogFact.css";
 
