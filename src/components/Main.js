@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Hero from "./Hero";
 import Animal from "./Animal";
-import { Container, Row} from "react-bootstrap";
+import { Container, Row,Col} from "react-bootstrap";
 import Dogfact from "./Dogfact";
 import CatFact from "./CatFact";
 import "./Main.css";
