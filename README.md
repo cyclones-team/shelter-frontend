@@ -44,7 +44,7 @@ _____________________________________________________
 
  ____________________________________________
  ### wirefarme link
- [wireframe](file:///C:/Users/STUDENT/OneDrive/new_project.pdf)
+ [wireframe](https://drive.google.com/file/d/1Ou0XpIRJrx0_J8iVogeYKRr0fBSFctU2/view)
  _________________________________________________
 ### our project link in github 
  
