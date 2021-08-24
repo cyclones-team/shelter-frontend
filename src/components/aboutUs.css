@@ -78,7 +78,7 @@ ul{
 
 .member-details > div:after {
 	content: '';
-	background-image: linear-gradient(45deg, #31572c7a 50%, transparent 50%);
+	background-image: linear-gradient(45deg, #FAA6A0 50%, transparent 50%);
 	position: absolute;
 	top: 0;
 	bottom: 0;

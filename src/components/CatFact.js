@@ -24,8 +24,12 @@ class Catfact extends react.Component {
               return (
                 <Carousel.Item key={index}>
                   <Card
-                    ClassName="shadow rounded border "
-                    style={{ width: "30rem" }}
+                  className="shadow p-3 mb-5 rounded border"
+                  style={{
+                    width: "30rem",
+                    background: "#fce5e4",
+                    fontFamily: "Balsamiq Sans, cursive",
+                  }}
                   >
                     <Card.Img variant="top" src={fact.image} />
                     <Card.Body>

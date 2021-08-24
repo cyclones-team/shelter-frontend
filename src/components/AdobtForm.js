@@ -14,11 +14,11 @@ class AdobtForm extends Component {
     } = this.props
   
     return (
-      <Modal show={show} onHide={handleAdobtClose}>
-        <Modal.Header closeButton>
+      <Modal style={{ fontFamily: 'Balsamiq Sans, cursive' }}  show={show} onHide={handleAdobtClose}>
+        <Modal.Header style={{ background: "#fce5e4"}} closeButton>
           <Modal.Title>Please fill your information</Modal.Title>
         </Modal.Header>
-        <Modal.Body>
+        <Modal.Body style={{ background: "#fce5e4"}}>
           <Form onSubmit={(e) => submitHandler(e,id)}>
             <Form.Group className="mb-3" controlId="formBasicEmail">
               <Form.Label>Your Name</Form.Label>
@@ -40,7 +40,8 @@ class AdobtForm extends Component {
               <Form.Control onChange={newPhoneNumber}
                 type="text" placeholder="Enter your phone number" />
             </Form.Group>
-            <Button className="shadow" variant="success" type="submit">
+            <Button style={{ background: "#885a6b", color: "#F2F2F2" }}
+                      className="shadow border" type="submit">
               Submit
             </Button>
           </Form>
