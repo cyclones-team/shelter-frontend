@@ -3,7 +3,6 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import axios from "axios";
 import { Card, Col } from "react-bootstrap";
 
-let itemOne = [];
 class Animal extends react.Component {
   constructor(props) {
     super(props);
@@ -26,7 +25,6 @@ class Animal extends react.Component {
   };
   fillAnimal = () => {
     this.setState({ itemOne: this.state.endangeredData[0] });
-    console.log(this.state.itemOne);
   };
 
   render() {

@@ -1,11 +1,6 @@
 import React, { Component } from 'react';
 import { Modal, Button, Form } from 'react-bootstrap';
 class AdobtForm extends Component {
-
- 
-
-
-
   render() {
     const {
       show,
@@ -15,9 +10,7 @@ class AdobtForm extends Component {
       newDescription,
       newPhoneNumber,
     } = this.props
-
-
-   
+  
     return (
       <Modal show={show} onHide={handleAdobtClose}>
         <Modal.Header closeButton>

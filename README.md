@@ -38,9 +38,11 @@ _____________________________________________________
 
 ### user story :
 * User can login to website and see the endangered Animals 
-* user can read all informations about animals
-* user can connect with any charity to help animals 
-* user can adopt any animals by service in our website called adoption  
+* user can view cat and dog facts
+* user can view,add,update and delete animal charities 
+* user can adopt any animals by service in our website called adoption 
+* user can add pets for adoption
+* user can view his/her profile  
 
  ____________________________________________
  ### wirefarme link

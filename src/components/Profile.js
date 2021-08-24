@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-// import { Container, Row, Col, Image, Card, ListGroup } from "react-bootstrap";
 import Header from "../Header";
 import Footer from "../Footer";
 import { withAuth0 } from "@auth0/auth0-react";
@@ -60,7 +59,7 @@ export class Profile extends Component {
                         <label>User Id</label>
                       </div>
                       <div class="col-md-6">
-                        <p>user id </p>
+                        <p>253336 </p>
                       </div>
                     </div>
                     <div class="row">

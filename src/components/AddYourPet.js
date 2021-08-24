@@ -47,15 +47,36 @@ class Charity extends react.Component {
 
   recallPetHandler = (index) => {
  newPetArr= newPetArr.splice(index, 1);
-  
-    
+ 
   };
 
   render() {
     return (
       <>
-        {newPetArr && (
+        <Row>
+          <Col className="justify-content-center m-4">
+            <Button
+              className="shadow"
+              variant="success "
+              width="50%"
+              onClick={this.openModal}
+            >
+              Add Your Pet
+            </Button>
+          </Col>
+          <PetForm
+            show={this.state.showModal}
+            handleClose={this.closeModal}
+            newPetName={this.newName}
+            newPetDescription={this.newPetDescription}
+            newPetType={this.newPetType}
+            newPetBreed={this.newPetBreed}
+            addPetHandler={this.addPetHandler}
+          />
+        </Row>
+        {newPetArr.length > 0 && (
           <>
+
             {" "}
             <Row className="mb-4 mt-2 justify-content-center">
               <h1 ClassName="success ">Your Added Pets </h1>
@@ -89,6 +110,7 @@ class Charity extends react.Component {
                 );
               })}
             </Row>
+
             <Row>
               <Col className="justify-content-center m-4">
                 <Button
@@ -112,6 +134,7 @@ class Charity extends react.Component {
                 newPetPic={this.newPetPic}
               />
             </Row>
+
           </>
         )}
       </>
