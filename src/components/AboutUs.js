@@ -78,14 +78,10 @@ export class AboutUs extends Component {
 
               <div class="pull-left col-md-4 sm-text-center">
                 <div class="team-overview">
-                  <h2>Meet The Team</h2>
+                  <h2>Meet Team Cyclones</h2>
                   <p>
                     <div>
-                      Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                      Adipisci quae nesciunt officia! Autem, nam eum voluptatem,
-                      esse voluptatibus deleniti tempora laboriosam sequi
-                      pariatur, explicabo itaque. Fuga, deserunt? Repudiandae,
-                      neque qui.
+                      A group of diligtnt students at Abdul Aziz Al Ghurair School of Advanced Computing with a shard vision of making the world a better place foreveryone.
                     </div>
                   </p>
                 </div>
@@ -108,10 +104,7 @@ export class AboutUs extends Component {
               </Col>
               <Col className="mt-3">
                 <p>
-                  Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                  Adipisci quae nesciunt officia! Autem, nam eum voluptatem,
-                  esse voluptatibus deleniti tempora laboriosam sequi pariatur,
-                  explicabo itaque. Fuga, deserunt? Repudiandae, neque qui.
+                 Rebuilding the structure of "everyone has the right to live" and proteting what needs protection from destructful habits that risks other lives and for selfish benefits. 
                 </p>
               </Col>
             </Row>

@@ -26,6 +26,7 @@ class PetForm extends Component {
                 type="text"
                 placeholder="Enter your Pet name "
                 onChange={newPetName}
+                required
               />
             </Form.Group>
             <Form.Group className="mb-3" controlId="formBasicText">
