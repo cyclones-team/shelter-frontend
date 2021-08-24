@@ -46,16 +46,37 @@ class Charity extends react.Component {
     });
   };
 
-  recallPetHandler = (e) => {
-    e.preventDefault();
-    newPetArr = newPetArr.splice("id", 1);
+  recallPetHandler = (id) => {
+    newPetArr = newPetArr.splice(id, 1);
   };
 
   render() {
     return (
       <>
-        {newPetArr && (
+        <Row>
+          <Col className="justify-content-center m-4">
+            <Button
+              className="shadow"
+              variant="success "
+              width="50%"
+              onClick={this.openModal}
+            >
+              Add Your Pet
+            </Button>
+          </Col>
+          <PetForm
+            show={this.state.showModal}
+            handleClose={this.closeModal}
+            newPetName={this.newName}
+            newPetDescription={this.newPetDescription}
+            newPetType={this.newPetType}
+            newPetBreed={this.newPetBreed}
+            addPetHandler={this.addPetHandler}
+          />
+        </Row>
+        {newPetArr.length > 0 && (
           <>
+
             {" "}
             <Row className="mb-4 mt-2 justify-content-center">
               <h1 ClassName="success ">Your Added Pets </h1>
@@ -78,7 +99,7 @@ class Charity extends react.Component {
                           </Button>
                         </Card.Text>
                         <Button
-                          onClick={this.recallPetHandler}
+                          onClick={this.recallPetHandler(index)}
                           variant="success "
                         >
                           Recall Your Pet
@@ -88,28 +109,6 @@ class Charity extends react.Component {
                   </Col>
                 );
               })}
-            </Row>
-            <Row>
-              <Col className="justify-content-center m-4">
-                <Button
-                  className="shadow"
-                  variant="success "
-                  width="50%"
-                  onClick={this.openModal}
-                >
-                  Add Your Pet
-                </Button>
-              </Col>
-
-              <PetForm
-                show={this.state.showModal}
-                handleClose={this.closeModal}
-                newPetName={this.newName}
-                newPetDescription={this.newPetDescription}
-                newPetType={this.newPetType}
-                newPetBreed={this.newPetBreed}
-                addPetHandler={this.addPetHandler}
-              />
             </Row>
           </>
         )}

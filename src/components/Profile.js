@@ -60,7 +60,7 @@ export class Profile extends Component {
                         <label>User Id</label>
                       </div>
                       <div class="col-md-6">
-                        <p>user id </p>
+                        <p>253336 </p>
                       </div>
                     </div>
                     <div class="row">

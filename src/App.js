@@ -23,6 +23,9 @@ class App extends react.Component {
             <Route path="/profile">
               <Profile />
             </Route>
+            <Route path='/action'>
+              <TakeAction />
+            </Route>
             <Route path="/action">
               <TakeAction />
             </Route>
