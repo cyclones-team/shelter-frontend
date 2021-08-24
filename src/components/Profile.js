@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-// import { Container, Row, Col, Image, Card, ListGroup } from "react-bootstrap";
 import Header from "../Header";
 import Footer from "../Footer";
 import { withAuth0 } from "@auth0/auth0-react";

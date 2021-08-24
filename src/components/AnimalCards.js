@@ -50,7 +50,6 @@ class AnimalsCards extends react.Component {
       .then((axiosResults) => {
         if (axiosResults.data[0]) {
           this.setState({ arr: axiosResults.data[0].animals });
-          console.log(axiosResults);
         }
         }
       )
