@@ -1,15 +1,12 @@
 import react from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-// import axios from 'axios';
 
-
-import { Card, Col,Button,Row } from "react-bootstrap";
+import { Card, Col, Button, Row } from "react-bootstrap";
 import AdobtForm from "./AdobtForm";
-
 
 import SelectedPet from "./SelectedPet";
 import axios from "axios";
-import petPic from "./assets/petReplace.png";
+
 import AddYourPet from "./AddYourPet";
 
 class AnimalsCards extends react.Component {
@@ -17,15 +14,15 @@ class AnimalsCards extends react.Component {
     super(props);
     this.state = {
       arr: [],
-      adobtModal: false
+      showModal:false,
+      adobtModal: false,
+      infoModal: {},
     };
   }
 
   submitHandler = (e) => {
     e.preventDefault();
-
-  }
-
+  };
 
   handleAdobtShow = () => {
     this.setState({ adobtModal: true });
@@ -35,9 +32,10 @@ class AnimalsCards extends react.Component {
     this.setState({ adobtModal: false });
   };
 
-
-  handleShow = () => {
+  handleShow = (element) => {
     this.setState({ showModal: true });
+    this.setState({ infoModal: element });
+    
   };
 
   handleClose = () => {
@@ -54,60 +52,72 @@ class AnimalsCards extends react.Component {
       .then((axiosResults) => {
         if (axiosResults.data[0]) {
           this.setState({ arr: axiosResults.data[0] });
-          console.log(axiosResults.data[0])
+          console.log(axiosResults.data[0]);
         }
       })
       .catch((err) => console.error(err));
-
   };
   render() {
     return (
       <>
         {this.state.arr.map((element, index) => {
-
-          <AdobtForm show={this.state.adobtModal}
+          <AdobtForm
+            show={this.state.adobtModal}
             handleAdobtClose={this.handleAdobtClose}
-            submitHandler={this.submitHandler} />
+            submitHandler={this.submitHandler}
+          />;
 
           return (
             <Col className="mb-4" key={index}>
               <Card
                 className="shadow p-3 mb-5 bg-white rounded border border-success "
                 style={{ width: "18rem" }}
-                
               >
-                <Card.Img variant="top" src={petPic} />
+                <Card.Img variant="top" src={element.picture} height="250px" />
                 <Card.Body>
                   <Card.Title>{element.name}</Card.Title>
                   <Card.Text>
-
-
                     {element.type}: {element.breeds.primary}
                   </Card.Text>
                   <Card.Text>
-
-                    <Button variant="link " onClick={this.handleShow}>More Details ..</Button>
+                    <Button
+                      variant="link "
+                      onClick={() => this.handleShow(element)}
+                    >
+                      More Details ..
+                    </Button>
                   </Card.Text>
-                  <Button className="shadow" variant="success " onClick={this.handleAdobtShow}>Adopt this One</Button>
-
+                  <Button
+                    className="shadow"
+                    variant="success "
+                    onClick={this.handleAdobtShow}
+                  >
+                    Adopt this One
+                  </Button>
                 </Card.Body>
               </Card>
-
-              <SelectedPet
-                title={element.name}
-                imageUrl={petPic}
-                description={element.description}
-                handleClose={this.handleClose}
-                show={this.state.showModal}
-              />
             </Col>
-
           );
         })}
 
-        <Row><AddYourPet /></Row>
 
 
+       { this.state.showModal && <SelectedPet
+          title={this.state.infoModal.name}
+          imageUrl={this.state.infoModal.picture}
+          breed={this.state.infoModal.breeds.primary}
+          gender={this.state.infoModal.gender}
+          size={this.state.infoModal.size}
+          age={this.state.infoModal.age}
+          description={this.state.infoModal.description}
+          handleClose={this.handleClose}
+          show={this.state.showModal}
+        />}
+
+
+        <Row>
+          <AddYourPet />
+        </Row>
       </>
     );
   }

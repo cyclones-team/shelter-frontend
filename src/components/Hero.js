@@ -1,19 +1,28 @@
 import react from "react";
-import HeroImage from "./assets/aee8cb60b21f43cabea615436dd3de11.jpg"
+
+import { Carousel, Container, Row } from "react-bootstrap";
 class Hero extends react.Component {
-  
   render() {
     return (
-      
-        <div>
-          <div style={{position:"absolute",width:"100%",marginTop:"3%"}}>
-            <p style={{fontSize:"220%",marginLeft:"50%"}}>"The Greatest Threat to Our Planet Is The Belief That Someone Else Will Save It"</p>
-            <p style={{marginLeft:"80%",fontSize:"150%"}}>~Robert Swan</p>
-          </div>
-        
-          <img src={HeroImage} alt="" style={{ width: "100%"}}></img>
-        </div>
-      
+      <div>
+        <Carousel style={{ width: "100%" }}>
+          <Carousel.Item>
+          <Carousel.Caption style={{marginBottom:"45%"}}>
+              <h1 style={{ background: "#31572c71", display: "inline" }}>
+                "The Greatest Threat to Our Planet Is The Belief That Someone
+                Else Will Save It"
+              </h1>
+            </Carousel.Caption>
+            <img
+              className="d-block"
+              src="https://img5.goodfon.com/wallpaper/nbig/6/9c/slon-slony-slonikha-slonenok-stado-stado-slonov-semeistvo-po.jpg"
+              alt="First slide"
+              style={{ width: "100%" }}
+            />
+            
+          </Carousel.Item>
+        </Carousel>
+      </div>
     );
   }
 }

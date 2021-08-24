@@ -3,7 +3,17 @@ import { Modal } from "react-bootstrap/";
 
 export class SelectedPet extends Component {
   render() {
-    const { title, imageUrl, description, handleClose, show } = this.props;
+    const {
+      breed,
+      gender,
+      size,
+      age,
+      title,
+      imageUrl,
+      description,
+      handleClose,
+      show,
+    } = this.props;
     return (
       <div>
         <Modal show={show} onHide={handleClose}>
@@ -21,6 +31,10 @@ export class SelectedPet extends Component {
                 objectFit: "cover",
               }}
             />
+            <p>Breed: {breed}</p>
+            <p>Gender: {gender}</p>
+            <p>Size: {size}</p>
+            <p> Age: {age}</p>
           </Modal.Body>
           <Modal.Footer>{description}</Modal.Footer>
         </Modal>
