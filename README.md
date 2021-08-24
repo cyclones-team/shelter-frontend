@@ -37,5 +37,19 @@ ____________________________________________
 _____________________________________________________
 
 ### user story :
- User can login to website and see the Endengered Animals 
+* User can login to website and see the endangered Animals 
+* user can read all informations about animals
+* user can connect with any charity to help animals 
+* user can adopt any animals by service in our website called adoption  
+
+ ____________________________________________
+ ### wirefarme link
+ [wireframe](https://drive.google.com/file/d/1Ou0XpIRJrx0_J8iVogeYKRr0fBSFctU2/view)
+ _________________________________________________
+### our project link in github 
  
+Front End : [front](https://github.com/cyclones-team/shelter-frontend)
+
+Back End : [backend](https://github.com/cyclones-team/shelter-backend)
+
+Trello : [trello](https://trello.com/b/pJgIZ7Fn/shelter)
