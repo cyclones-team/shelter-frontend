@@ -18,7 +18,7 @@ class AnimalsCards extends react.Component {
     };
   }
 
-  submitHandler = (e,id) => {
+  submitHandler = (e, id) => {
     e.preventDefault();
     let url = `${process.env.REACT_APP_SREVER_URL}/adopte/${id}`;
     axios.delete(url).then((response) => {
@@ -41,7 +41,6 @@ class AnimalsCards extends react.Component {
   handleShow = (element) => {
     this.setState({ showModal: true });
     this.setState({ infoModal: element });
-
   };
 
   handleClose = () => {
@@ -58,27 +57,34 @@ class AnimalsCards extends react.Component {
         if (axiosResults.data[0]) {
           this.setState({ arr: axiosResults.data[0].animals });
         }
-        }
-      )
+      })
       .catch((err) => console.error(err));
   };
-
 
   render() {
     return (
       <>
         {this.state.arr.map((element, index) => {
           return (
-
             <>
-              <Col className="mb-4" key={index}>
+              <Col className="mb-4 justify-content-center" key={index}>
                 <Card
-                  className="shadow p-3 mb-5 bg-white rounded border border-success "
-                  style={{ width: "18rem" }}
+                  className="shadow p-3 mb-5 rounded border"
+                  style={{
+                    width: "18rem",
+                    background: "#fce5e4",
+                    fontFamily: "Balsamiq Sans, cursive",
+                  }}
                 >
-                  <Card.Img variant="top" src={element.picture} height="250px" />
+                  <Card.Img
+                    variant="top"
+                    src={element.picture}
+                    height="250px"
+                  />
                   <Card.Body>
-                    <Card.Title>{element.name}</Card.Title>
+                    <Card.Title style={{ fontSize: "25px" }}>
+                      {element.name}
+                    </Card.Title>
                     <Card.Text>
                       {element.type}: {element.breeds}
                     </Card.Text>
@@ -92,8 +98,8 @@ class AnimalsCards extends react.Component {
                     </Card.Text>
 
                     <Button
-                      className="shadow"
-                      variant="success "
+                      style={{ background: "#885a6b", color: "#F2F2F2" }}
+                      className="shadow border"
                       onClick={this.handleAdobtShow}
                     >
                       Adopt this One
@@ -111,20 +117,19 @@ class AnimalsCards extends react.Component {
           );
         })}
 
-
-
-        {this.state.showModal && <SelectedPet
-          title={this.state.infoModal.name}
-          imageUrl={this.state.infoModal.picture}
-          breed={this.state.infoModal.breeds}
-          gender={this.state.infoModal.gender}
-          size={this.state.infoModal.size}
-          age={this.state.infoModal.age}
-          description={this.state.infoModal.description}
-          handleClose={this.handleClose}
-          show={this.state.showModal}
-        />}
-
+        {this.state.showModal && (
+          <SelectedPet
+            title={this.state.infoModal.name}
+            imageUrl={this.state.infoModal.picture}
+            breed={this.state.infoModal.breeds}
+            gender={this.state.infoModal.gender}
+            size={this.state.infoModal.size}
+            age={this.state.infoModal.age}
+            description={this.state.infoModal.description}
+            handleClose={this.handleClose}
+            show={this.state.showModal}
+          />
+        )}
 
         <Row>
           <AddYourPet />

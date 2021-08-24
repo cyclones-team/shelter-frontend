@@ -2,11 +2,25 @@
 
 .navlink{
   text-decoration:none;
-  color:#ECF39E;
+  color:#F2F2F2;
   transition: 0.4s;
 }
 
 .navlink:hover{
-color: #31572C;
-background-color: #ECF39E;
+color: #BD94A4;
+background-color: #F2F2F2;
+}
+
+
+
+.h {
+
+  color: #BD94A4;
+  color: #BCCEE2;
+  color: #FEDAAA;
+  color: #FBBB97;
+  color: #fce5e4;
+    color: #885a6b;
+
+
 }

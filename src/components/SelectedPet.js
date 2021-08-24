@@ -16,11 +16,11 @@ export class SelectedPet extends Component {
     } = this.props;
     return (
       <div>
-        <Modal show={show} onHide={handleClose}>
-          <Modal.Header closeButton>
-            <Modal.Title>{title}</Modal.Title>
+        <Modal  style={{ fontFamily: 'Balsamiq Sans, cursive' }} show={show} onHide={handleClose}>
+          <Modal.Header style={{ background: "#fce5e4"}} closeButton>
+            <Modal.Title >{title}</Modal.Title>
           </Modal.Header>
-          <Modal.Body>
+          <Modal.Body style={{ background: "#fce5e4"}}>
             <img
               className="imgModal"
               src={imageUrl}
@@ -36,7 +36,7 @@ export class SelectedPet extends Component {
             <p>Size: {size}</p>
             <p> Age: {age}</p>
           </Modal.Body>
-          <Modal.Footer>{description}</Modal.Footer>
+          <Modal.Footer style={{ background: "#fce5e4"}}>{description}</Modal.Footer>
         </Modal>
       </div>
     );
