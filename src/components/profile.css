@@ -1,12 +1,12 @@
 body{
-    background: -webkit-linear-gradient(left, #90a95546, #ecf39e4f);
+    background: linear-gradient(#BCCEE2,#FEDAAA);
 }
 .emp-profile{
     padding: 3%;
     margin-top: 3%;
     margin-bottom: 3%;
     border-radius: 0.5rem;
-    background: #fff;
+    background: #F2F2F2;
 }
 .profile-img{
     text-align: center;
@@ -33,10 +33,10 @@ body{
 }
 .profile-head h5{
     color: #333;
+    font-size: 40px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
-.profile-head h6{
-    color: #0062cc;
-}
+
 .profile-edit-btn{
     border: none;
     border-radius: 1.5rem;
@@ -46,34 +46,7 @@ body{
     color: #6c757d;
     cursor: pointer;
 }
-.proile-rating{
-    font-size: 12px;
-    color: #818182;
-    margin-top: 5%;
-}
-.proile-rating span{
-    color: #495057;
-    font-size: 15px;
-    font-weight: 600;
-}
-.profile-head .nav-tabs{
-    margin-bottom:5%;
-}
-.profile-head .nav-tabs .nav-link{
-    font-weight:600;
-    border: none;
-}
 
-.profile-work{
-    padding: 14%;
-    margin-top: -15%;
-}
-.profile-work p{
-    font-size: 12px;
-    color: #818182;
-    font-weight: 600;
-    margin-top: 10%;
-}
 .profile-work a{
     text-decoration: none;
     color: #495057;
@@ -89,4 +62,5 @@ body{
 .profile-tab p{
     font-weight: 600;
     color: #0062cc;
+    
 }

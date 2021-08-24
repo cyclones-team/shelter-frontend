@@ -46,8 +46,7 @@ class Charity extends react.Component {
   };
 
   recallPetHandler = (index) => {
- newPetArr= newPetArr.splice(index, 1);
- 
+    newPetArr = newPetArr.splice(index, 1);
   };
 
   render() {
@@ -56,36 +55,45 @@ class Charity extends react.Component {
         <Row>
           <Col className="justify-content-center m-4">
             <Button
-              className="shadow"
-              variant="success "
+              style={{
+                background: "#885a6b",
+                color: "#F2F2F2",
+                fontFamily: "Balsamiq Sans, cursive",
+              }}
+              className="shadow border"
               width="50%"
               onClick={this.openModal}
             >
               Add Your Pet
             </Button>
           </Col>
+
           <PetForm
             show={this.state.showModal}
             handleClose={this.closeModal}
-            newPetName={this.newName}
+            newPetName={this.newPetName}
             newPetDescription={this.newPetDescription}
             newPetType={this.newPetType}
             newPetBreed={this.newPetBreed}
             addPetHandler={this.addPetHandler}
+            newPetPic={this.newPetPic}
           />
         </Row>
         {newPetArr.length > 0 && (
           <>
-
             {" "}
             <Row className="mb-4 mt-2 justify-content-center">
               <h1 ClassName="success ">Your Added Pets </h1>
               {newPetArr.map((item, index) => {
                 return (
-                  <Col className="mb-4">
+                  <Col className="mb-4 justify-content-center">
                     <Card
-                      className="shadow p-3 mb-5 bg-white rounded border border-success "
-                      style={{ width: "18rem" }}
+                      className="shadow p-3 mb-5 rounded border"
+                      style={{
+                        width: "18rem",
+                        background: "#fce5e4",
+                        fontFamily: "Balsamiq Sans, cursive",
+                      }}
                     >
                       <Card.Img variant="top" src={item.petPic} />
                       <Card.Body>
@@ -100,7 +108,8 @@ class Charity extends react.Component {
                         </Card.Text>
                         <Button
                           onClick={this.recallPetHandler(index)}
-                          variant="success "
+                          style={{ background: "#885a6b", color: "#F2F2F2" }}
+                          className="shadow border"
                         >
                           Recall Your Pet
                         </Button>
@@ -110,31 +119,6 @@ class Charity extends react.Component {
                 );
               })}
             </Row>
-
-            <Row>
-              <Col className="justify-content-center m-4">
-                <Button
-                  className="shadow"
-                  variant="success "
-                  width="50%"
-                  onClick={this.openModal}
-                >
-                  Add Your Pet
-                </Button>
-              </Col>
-
-              <PetForm
-                show={this.state.showModal}
-                handleClose={this.closeModal}
-                newPetName={this.newPetName}
-                newPetDescription={this.newPetDescription}
-                newPetType={this.newPetType}
-                newPetBreed={this.newPetBreed}
-                addPetHandler={this.addPetHandler}
-                newPetPic={this.newPetPic}
-              />
-            </Row>
-
           </>
         )}
       </>

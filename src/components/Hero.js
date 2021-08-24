@@ -14,7 +14,7 @@ class Hero extends react.Component {
             </Carousel.Caption>
             <img
               className="d-block"
-              src="https://img5.goodfon.com/wallpaper/nbig/6/9c/slon-slony-slonikha-slonenok-stado-stado-slonov-semeistvo-po.jpg"
+              src="https://www.heartmath.org/assets/uploads/2010/04/HMI-Blog-Pets-Making-a-Connection-That%E2%80%99s-Healthy-for-Humans.jpg"
               alt="First slide"
               style={{ width: "100%" }}
             />
