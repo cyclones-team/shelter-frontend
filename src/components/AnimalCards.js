@@ -70,7 +70,11 @@ class AnimalsCards extends react.Component {
               <Col className="mb-4 justify-content-center" key={index}>
                 <Card
                   className="shadow p-3 mb-5 rounded border"
-                  style={{ width: "18rem", background: "#fce5e4",fontFamily: 'Balsamiq Sans, cursive' }}
+                  style={{
+                    width: "18rem",
+                    background: "#fce5e4",
+                    fontFamily: "Balsamiq Sans, cursive",
+                  }}
                 >
                   <Card.Img
                     variant="top"
@@ -78,7 +82,9 @@ class AnimalsCards extends react.Component {
                     height="250px"
                   />
                   <Card.Body>
-                    <Card.Title style={{fontSize:"25px"}}>{element.name}</Card.Title>
+                    <Card.Title style={{ fontSize: "25px" }}>
+                      {element.name}
+                    </Card.Title>
                     <Card.Text>
                       {element.type}: {element.breeds}
                     </Card.Text>
