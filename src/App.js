@@ -23,7 +23,7 @@ class App extends react.Component {
         <Router>
           <Switch>
             <Route path='/' exact>
-              <Homepage/>
+              <Homepage />
             </Route>
             <Route path='/about'>
               <AboutUs />
@@ -33,7 +33,8 @@ class App extends react.Component {
             
             </Route>
             <Route path='/action'>
-            <TakeAction />             
+            <TakeAction />
+              
             </Route>
           </Switch>
         </Router>
