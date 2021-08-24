@@ -1,7 +1,7 @@
 import react from "react";
 import axios from "axios";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { Card, Image, Carousel, Button, Row, Col } from "react-bootstrap";
+import { Card, Carousel, Button, Row,Col } from "react-bootstrap";
 import CharityForm from "./CharityForm";
 import { withAuth0 } from "@auth0/auth0-react";
 import UpdateForm from "./UpdateForm";
@@ -58,9 +58,24 @@ class Charity extends react.Component {
 
   addCharityHandler = async (e) => {
     e.preventDefault();
-    console.log(this.props.auth0.user.email);
-    let url = `${process.env.REACT_APP_SREVER_URL}/charity?email=${this.props.auth0.user.email}&name=${this.state.name}&description=${this.state.description}&address=${this.state.address}&url=${this.state.website}&logo=${this.state.logo}`;
-    await axios.post(url).then((response) => {
+    
+    // let url = `${process.env.REACT_APP_SREVER_URL}/charity?email=${this.props.auth0.user.email}&name=${this.state.name}&description=${this.state.description}&address=${this.state.address}&url=${this.state.website}&logo=${this.state.logo}`;
+    let data={
+      email:this.props.auth0.user.email,
+      name:"hgf",
+      description:"tttt",
+      address:"gggg",
+      url:"juujujuj",
+      logo:"jjjj",
+     
+    }
+    let config={
+      method:"post",
+      baseURL:"http://localhost:3020",
+      url:"/charity",
+      data:data
+    }
+    await axios(config).then((response) => {
       console.log(response);
       this.setState({
         charityArray: response.data.charities,
@@ -115,6 +130,9 @@ class Charity extends react.Component {
                       <Card.Title>{item.name}</Card.Title>
                       <Card.Text>{item.description}</Card.Text>
                       <Card.Text> {item.address}</Card.Text>
+                      <Row className='mt-5'>
+                        <Col>
+                        
                       <Button
                         className="m-3"
                         variant="success border border-white"
@@ -135,8 +153,15 @@ class Charity extends react.Component {
                         variant="success border border-white"
                         onClick={this.updateOpenModal}
                       >
-                        Update
+                        Add your charity
                       </Button>
+                      <Button
+                        className="m-3"
+                        variant="success border border-white"
+                        onClick={this.updateOpenModal}
+                      >
+                        Update
+                      </Button></Col></Row>
                     </Card.ImgOverlay>
                   </Card>
                   <UpdateForm
@@ -156,17 +181,6 @@ class Charity extends react.Component {
           </Carousel>
         </Row>
         <Row>
-          <Col className="justify-content-center m-4">
-            <Button
-              className="shadow"
-              variant="success"
-              width="50%"
-              onClick={this.openModal}
-            >
-              Add Your Charity
-            </Button>
-          </Col>
-
           <CharityForm
             show={this.state.showModal}
             handleClose={this.closeModal}

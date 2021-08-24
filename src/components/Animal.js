@@ -3,7 +3,6 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import axios from "axios";
 import { Card, Col } from "react-bootstrap";
 
-let itemOne = [];
 class Animal extends react.Component {
   constructor(props) {
     super(props);

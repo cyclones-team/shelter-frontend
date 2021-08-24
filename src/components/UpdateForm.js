@@ -17,7 +17,7 @@ class UpdateForm extends Component {
         return (
             <Modal show={show} onHide={handleClose}>
                 <Modal.Header closeButton>
-                    <Modal.Title>Update Charity Form</Modal.Title>
+                    <Modal.Title>Charity Form</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
                     <Form onSubmit={(e) => addCharityHandler(e, id)}>

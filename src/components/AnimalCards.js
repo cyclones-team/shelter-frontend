@@ -1,12 +1,10 @@
 import react from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-
 import { Card, Col, Button, Row } from "react-bootstrap";
 import AdobtForm from "./AdobtForm";
-
 import SelectedPet from "./SelectedPet";
 import axios from "axios";
-
+import { withAuth0 } from "@auth0/auth0-react";
 import AddYourPet from "./AddYourPet";
 
 class AnimalsCards extends react.Component {
@@ -43,18 +41,19 @@ class AnimalsCards extends react.Component {
   };
   componentDidMount = async () => {
     this.getAnimals();
+
   };
 
   getAnimals = async () => {
     let url = `${process.env.REACT_APP_SREVER_URL}/adopte`;
-
     axios(url)
       .then((axiosResults) => {
         if (axiosResults.data[0]) {
-          this.setState({ arr: axiosResults.data[0] });
-          console.log(axiosResults.data[0]);
+          this.setState({ arr: axiosResults.data[0].animals });
+          console.log(axiosResults);
         }
-      })
+        }
+      )
       .catch((err) => console.error(err));
   };
   render() {
@@ -77,7 +76,7 @@ class AnimalsCards extends react.Component {
                 <Card.Body>
                   <Card.Title>{element.name}</Card.Title>
                   <Card.Text>
-                    {element.type}: {element.breeds.primary}
+                    {element.type}: {element.breeds}
                   </Card.Text>
                   <Card.Text>
                     <Button
@@ -105,7 +104,7 @@ class AnimalsCards extends react.Component {
        { this.state.showModal && <SelectedPet
           title={this.state.infoModal.name}
           imageUrl={this.state.infoModal.picture}
-          breed={this.state.infoModal.breeds.primary}
+          breed={this.state.infoModal.breeds}
           gender={this.state.infoModal.gender}
           size={this.state.infoModal.size}
           age={this.state.infoModal.age}
@@ -122,4 +121,4 @@ class AnimalsCards extends react.Component {
     );
   }
 }
-export default AnimalsCards;
+export default withAuth0(AnimalsCards);
