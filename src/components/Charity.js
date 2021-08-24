@@ -76,7 +76,6 @@ class Charity extends react.Component {
       data:data
     }
     await axios(config).then((response) => {
-      console.log(response);
       this.setState({
         charityArray: response.data.charities,
         showModal: false,

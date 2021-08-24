@@ -1,5 +1,4 @@
 import react from "react";
-
 import { Carousel} from "react-bootstrap";
 class Hero extends react.Component {
   render() {

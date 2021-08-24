@@ -30,7 +30,6 @@ class Charity extends react.Component {
 
   addPetHandler = (e) => {
     e.preventDefault();
-    console.log(this.props.auth0.user.name);
 
     let petData = {
       petName: this.state.petName,
