@@ -3,7 +3,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { withAuth0 } from "@auth0/auth0-react";
 import Login from "./components/LoginButton";
 import Logout from "./components/LogoutButton";
-import { Nav, Navbar, Container, Col, Row } from "react-bootstrap";
+import { Nav, Navbar, Container, Col } from "react-bootstrap";
 import logo from "./components/assets/logo2.png";
 import { Link } from "react-router-dom";
 import "./Header.css";

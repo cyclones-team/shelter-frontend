@@ -1,12 +1,12 @@
 import React, { Component } from "react";
-import { Container, Row, Col } from "react-bootstrap";
-import rhino from "./assets/rhino.png";
+import { Container } from "react-bootstrap";
 import "./aboutUs.css";
 import Header from "../Header";
 import Footer from "../Footer";
 import renad from "./assets/renad.jpeg"
 import thaer from "./assets/thaer.jpeg"
 import anas from "./assets/anas.jpeg"
+import walaa from "./assets/walaaa.jpeg"
 
 export class AboutUs extends Component {
   render() {
@@ -63,7 +63,7 @@ export class AboutUs extends Component {
                     <div class="member-details">
                       <div>
                         <img
-                          src="https://via.placeholder.com/100.png/09f/fff"
+                          src={walaa}
                           alt="Web Developer"
                         />
                         <div class="member-info">
@@ -78,37 +78,18 @@ export class AboutUs extends Component {
 
               <div class="pull-left col-md-4 sm-text-center">
                 <div class="team-overview">
-                  <h2>Meet Team Cyclones</h2>
+                  <h2 className='text-capitalize mt-1 mb-3 ' 
+                  style={{color:"#FAA6A0",fontFamily: 'Permanent Marker',fontWeight:'900',fontSize:'35px'}}>Team Cyclones Vision</h2>
                   <p>
-                    <div>
-                      A group of diligtnt students at Abdul Aziz Al Ghurair School of Advanced Computing with a shard vision of making the world a better place foreveryone.
+                    <div style={{color:"#000",fontFamily: 'Permanent Marker',fontWeight:'500',fontSize:'20px'}}>
+                    Rebuilding the structure of "everyone has the right to live" and proteting what needs protection from destructful habits that risks other lives and for selfish benefits. 
                     </div>
                   </p>
                 </div>
               </div>
             </div>
           </div>
-        </Container>
-
-       
-          <Container className="" >
-            <Row className="mt-5">
-              <Col></Col>
-              <Col>
-                <h2>Our Vision</h2>
-              </Col>
-            </Row>
-            <Row>
-              <Col className="ml-5 ">
-                <img src={rhino} alt="rhino" width="400px" />
-              </Col>
-              <Col className="mt-3">
-                <p>
-                 Rebuilding the structure of "everyone has the right to live" and proteting what needs protection from destructful habits that risks other lives and for selfish benefits. 
-                </p>
-              </Col>
-            </Row>
-          </Container>
+        </Container>    
         <Footer/>
       </>
     );

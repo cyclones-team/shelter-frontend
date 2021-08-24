@@ -16,7 +16,7 @@ class Hero extends react.Component {
               className="d-block"
               src="https://www.heartmath.org/assets/uploads/2010/04/HMI-Blog-Pets-Making-a-Connection-That%E2%80%99s-Healthy-for-Humans.jpg"
               alt="First slide"
-              style={{ width: "100%" }}
+              style={{ width: "100%",position:'relative' }}
             />
             
           </Carousel.Item>

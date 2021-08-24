@@ -14,11 +14,11 @@ class PetForm extends Component {
     } = this.props;
 
     return (
-      <Modal show={show} onHide={handleClose}>
-        <Modal.Header closeButton>
+      <Modal style={{ fontFamily: 'Balsamiq Sans, cursive' }} show={show} onHide={handleClose}>
+        <Modal.Header style={{ background: "#fce5e4"}} closeButton>
           <Modal.Title>Please fill the information below </Modal.Title>
         </Modal.Header>
-        <Modal.Body>
+        <Modal.Body style={{ background: "#fce5e4"}}>
           <Form onSubmit={(e) => addPetHandler(e)}>
             <Form.Group className="mb-3" controlId="formBasicText">
               <Form.Label>Pet Name</Form.Label>
@@ -63,7 +63,8 @@ class PetForm extends Component {
                 placeholder="Enter Your Pet Breed"
               />
             </Form.Group>
-            <Button className="shadow" variant="success " type="submit">
+            <Button style={{ background: "#885a6b", color: "#F2F2F2" }}
+                      className="shadow border" type="submit">
               Add Pet
             </Button>
           </Form>

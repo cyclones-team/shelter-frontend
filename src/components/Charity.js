@@ -106,7 +106,7 @@ class Charity extends react.Component {
     return (
       <>
         <Row>
-          <h1 className="text-center">Animals charities</h1>
+          <h1 className='text-capitalize  text-center mt-5 mb-3 ' style={{color:"#885A6B",fontFamily: 'Permanent Marker',fontWeight:'900',fontSize:'60px'}}>Animals charities</h1>
           <Carousel
             className="shadow rounded p-2"
             style={{ width: "50%", margin: "auto" }}
@@ -114,26 +114,26 @@ class Charity extends react.Component {
             {this.state.charityArray.map((item, index) => {
               return (
                 <Carousel.Item key={index}>
-                  <Card className="text-white text-center">
+                  <Card className="text-white text-center" style={{fontFamily: 'Permanent Marker'}}>
                     <Card.Img
-                      src="https://i.pinimg.com/originals/15/47/aa/1547aa8f54dd1fb3694abee485c3269a.jpg"
-                      alt="Card image"
+                      src="https://www.seekpng.com/png/detail/24-249091_scribble-desktop-background-aesthetic-tumblr-plain.png"
                     />
-                    <Card.ImgOverlay className="mt-2">
+                    <Card.ImgOverlay className="mt-2 ">
                       <Card.Img
-                        style={{ width: "100px", height: "100px" }}
+                        style={{ width: "150px", height: "100px" }}
                         src={item.logo}
                         alt="Card image"
+                        className='mb-4'
                       />
-                      <Card.Title>{item.name}</Card.Title>
-                      <Card.Text>{item.description}</Card.Text>
-                      <Card.Text> {item.address}</Card.Text>
+                      <Card.Title className='text-dark mb-4 mt-4'>{item.name}</Card.Title>
+                      <Card.Text  className='text-dark mb-4'>{item.description}</Card.Text>
+                      <Card.Text  className='text-dark mb-4'> {item.address}</Card.Text>
                       <Row className='mt-5'>
                         <Col>
                         
                       <Button
                         className="m-3"
-                        variant="outline-light"
+                        variant="outline-dark"
                         href={item.url}
                         target="_blank"
                       >
@@ -141,21 +141,21 @@ class Charity extends react.Component {
                       </Button>
                       <Button
                         className="m-3"
-                        variant="outline-light"
+                        variant="outline-dark"
                         onClick={() => this.deleteCharity(item._id)}
                       >
                         Delete
                       </Button>
                       <Button
                         className="m-3"
-                        variant="outline-light"
+                        variant="outline-dark"
                         onClick={this.updateOpenModal}
                       >
                         Add your charity
                       </Button>
                       <Button
                         className="m-3"
-                        variant="outline-light"
+                        variant="outline-dark"
                         onClick={this.updateOpenModal}
                       >
                         Update
