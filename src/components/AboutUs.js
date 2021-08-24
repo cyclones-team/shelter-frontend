@@ -4,6 +4,9 @@ import rhino from "./assets/rhino.png";
 import "./aboutUs.css";
 import Header from "../Header";
 import Footer from "../Footer";
+import renad from "./assets/renad.jpeg"
+import thaer from "./assets/thaer.jpeg"
+import anas from "./assets/anas.jpeg"
 
 export class AboutUs extends Component {
   render() {
@@ -19,7 +22,7 @@ export class AboutUs extends Component {
                     <div class="member-details">
                       <div>
                         <img
-                          src="https://via.placeholder.com/100.png/09f/fff"
+                          src={renad}
                           alt="Web Developer"
                         />
                         <div class="member-info">
@@ -32,7 +35,7 @@ export class AboutUs extends Component {
                     <div class="member-details">
                       <div>
                         <img
-                          src="https://via.placeholder.com/100.png/09f/fff"
+                          src={thaer}
                           alt="Web Developer"
                         />
                         <div class="member-info">
@@ -47,7 +50,7 @@ export class AboutUs extends Component {
                     <div class="member-details">
                       <div>
                         <img
-                          src="https://via.placeholder.com/100.png/09f/fff"
+                          src={anas}
                           alt="Web Developer"
                         />
                         <div class="member-info">

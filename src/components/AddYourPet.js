@@ -46,53 +46,73 @@ class Charity extends react.Component {
     });
   };
 
+  recallPetHandler = (e) => {
+    e.preventDefault();
+    newPetArr = newPetArr.splice("id", 1);
+  };
+
   render() {
     return (
       <>
-        <Row className="mb-4 mt-2 justify-content-center">
-         <h1 ClassName="success ">Your Added Pets </h1>
-          {newPetArr.map((item, index) => {
-            return (
-              <Col className="mb-4">
-                <Card
-                  className="shadow p-3 mb-5 bg-white rounded border border-success "
-                  style={{ width: "18rem" }}
+        {newPetArr && (
+          <>
+            {" "}
+            <Row className="mb-4 mt-2 justify-content-center">
+              <h1 ClassName="success ">Your Added Pets </h1>
+              {newPetArr.map((item, index) => {
+                return (
+                  <Col className="mb-4">
+                    <Card
+                      className="shadow p-3 mb-5 bg-white rounded border border-success "
+                      style={{ width: "18rem" }}
+                    >
+                      <Card.Img variant="top" src={item.petPic} />
+                      <Card.Body>
+                        <Card.Title>{item.petName}</Card.Title>
+                        <Card.Text>
+                          {item.petType}: {item.petBreed}
+                        </Card.Text>
+                        <Card.Text>
+                          <Button variant="link " onClick={this.handleShow}>
+                            More Details ..
+                          </Button>
+                        </Card.Text>
+                        <Button
+                          onClick={this.recallPetHandler}
+                          variant="success "
+                        >
+                          Recall Your Pet
+                        </Button>
+                      </Card.Body>
+                    </Card>
+                  </Col>
+                );
+              })}
+            </Row>
+            <Row>
+              <Col className="justify-content-center m-4">
+                <Button
+                  className="shadow"
+                  variant="success "
+                  width="50%"
+                  onClick={this.openModal}
                 >
-                  <Card.Img variant="top" src={item.petPic} />
-                  <Card.Body>
-                    <Card.Title>{item.petName}</Card.Title>
-                    <Card.Text>
-                      {item.petType}: {item.petBreed}
-                    </Card.Text>
-                    <Card.Text>
-                    <Button variant="link " onClick={this.handleShow}>
-                      More Details ..
-                    </Button>
-                    </Card.Text>
-                    <Button variant="success ">Adopt this One</Button>
-                  </Card.Body>
-                </Card>
+                  Add Your Pet
+                </Button>
               </Col>
-            );
-          })}
-        </Row>
-        <Row>
-          <Col className="justify-content-center m-4">
-            <Button className="shadow" variant="success " width="50%" onClick={this.openModal}>
-              Add Your Pet
-            </Button>
-          </Col>
 
-          <PetForm
-            show={this.state.showModal}
-            handleClose={this.closeModal}
-            newPetName={this.newName}
-            newPetDescription={this.newPetDescription}
-            newPetType={this.newPetType}
-            newPetBreed={this.newPetBreed}
-            addPetHandler={this.addPetHandler}
-          />
-        </Row>
+              <PetForm
+                show={this.state.showModal}
+                handleClose={this.closeModal}
+                newPetName={this.newName}
+                newPetDescription={this.newPetDescription}
+                newPetType={this.newPetType}
+                newPetBreed={this.newPetBreed}
+                addPetHandler={this.addPetHandler}
+              />
+            </Row>
+          </>
+        )}
       </>
     );
   }
