@@ -18,8 +18,16 @@ class AnimalsCards extends react.Component {
     };
   }
 
-  submitHandler = (e) => {
+  submitHandler = (e,id) => {
     e.preventDefault();
+    let url = `${process.env.REACT_APP_SREVER_URL}/adopte/${id}`;
+    axios.delete(url).then((response) => {
+      this.setState({
+        charityArray: response.data.animals,
+        adobtModal: false,
+      });
+    });
+    this.getAnimals();
   };
 
   handleAdobtShow = () => {
@@ -41,7 +49,6 @@ class AnimalsCards extends react.Component {
   };
   componentDidMount = async () => {
     this.getAnimals();
-
   };
 
   getAnimals = async () => {
@@ -55,12 +62,12 @@ class AnimalsCards extends react.Component {
       )
       .catch((err) => console.error(err));
   };
+
+
   render() {
     return (
       <>
         {this.state.arr.map((element, index) => {
-
-
           return (
 
             <>
@@ -98,6 +105,7 @@ class AnimalsCards extends react.Component {
                 show={this.state.adobtModal}
                 handleAdobtClose={this.handleAdobtClose}
                 submitHandler={this.submitHandler}
+                id={element._id}
               />
             </>
           );

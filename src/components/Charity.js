@@ -133,7 +133,7 @@ class Charity extends react.Component {
                         
                       <Button
                         className="m-3"
-                        variant="success border border-white"
+                        variant="outline-light"
                         href={item.url}
                         target="_blank"
                       >
@@ -141,21 +141,21 @@ class Charity extends react.Component {
                       </Button>
                       <Button
                         className="m-3"
-                        variant="success border border-white"
+                        variant="outline-light"
                         onClick={() => this.deleteCharity(item._id)}
                       >
                         Delete
                       </Button>
                       <Button
                         className="m-3"
-                        variant="success border border-white"
+                        variant="outline-light"
                         onClick={this.updateOpenModal}
                       >
                         Add your charity
                       </Button>
                       <Button
                         className="m-3"
-                        variant="success border border-white"
+                        variant="outline-light"
                         onClick={this.updateOpenModal}
                       >
                         Update

@@ -6,9 +6,11 @@ class AdobtForm extends Component {
       show,
       handleAdobtClose,
       newName,
+      id,
       newAddress,
       newDescription,
       newPhoneNumber,
+      submitHandler
     } = this.props
   
     return (
@@ -17,7 +19,7 @@ class AdobtForm extends Component {
           <Modal.Title>Please fill your information</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <Form onSubmit={(e) => this.props.submitHandler(e)}>
+          <Form onSubmit={(e) => submitHandler(e,id)}>
             <Form.Group className="mb-3" controlId="formBasicEmail">
               <Form.Label>Your Name</Form.Label>
               <Form.Control
