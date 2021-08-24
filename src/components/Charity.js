@@ -25,12 +25,13 @@ class Charity extends react.Component {
       ushowModal: false,
     };
   }
-  componentDidUpdate = async () => {
+  componentDidMount = async () => {
     this.getCharities();
   };
 
   getCharities = async () => {
     let url = `${process.env.REACT_APP_SREVER_URL}/charity/${this.props.auth0.user.email}`;
+
     axios(url)
       .then((axiosResults) => {
         if (axiosResults.data.charities) {
@@ -58,8 +59,6 @@ class Charity extends react.Component {
 
   addCharityHandler = async (e) => {
     e.preventDefault();
-    
-    // let url = `${process.env.REACT_APP_SREVER_URL}/charity?email=${this.props.auth0.user.email}&name=${this.state.name}&description=${this.state.description}&address=${this.state.address}&url=${this.state.website}&logo=${this.state.logo}`;
     let data={
       email:this.props.auth0.user.email,
       name:"hgf",
