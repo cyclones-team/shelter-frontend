@@ -30,7 +30,6 @@ class Charity extends react.Component {
 
   addPetHandler = (e) => {
     e.preventDefault();
-    console.log(this.props.auth0.user.name);
 
     let petData = {
       petName: this.state.petName,
@@ -46,9 +45,10 @@ class Charity extends react.Component {
     });
   };
 
-  recallPetHandler = (e) => {
-    e.preventDefault();
-    newPetArr = newPetArr.splice("id", 1);
+  recallPetHandler = (index) => {
+ newPetArr= newPetArr.splice(index, 1);
+  
+    
   };
 
   render() {
@@ -78,7 +78,7 @@ class Charity extends react.Component {
                           </Button>
                         </Card.Text>
                         <Button
-                          onClick={this.recallPetHandler}
+                          onClick={this.recallPetHandler(index)}
                           variant="success "
                         >
                           Recall Your Pet
@@ -104,11 +104,12 @@ class Charity extends react.Component {
               <PetForm
                 show={this.state.showModal}
                 handleClose={this.closeModal}
-                newPetName={this.newName}
+                newPetName={this.newPetName}
                 newPetDescription={this.newPetDescription}
                 newPetType={this.newPetType}
                 newPetBreed={this.newPetBreed}
                 addPetHandler={this.addPetHandler}
+                newPetPic={this.newPetPic}
               />
             </Row>
           </>
