@@ -73,7 +73,7 @@ class AnimalsCards extends react.Component {
                   style={{
                     width: "18rem",
                     background: "#fce5e4",
-                    fontFamily: "Balsamiq Sans, cursive",
+                    fontFamily: "Permanent Marker",
                   }}
                 >
                   <Card.Img

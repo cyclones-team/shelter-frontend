@@ -18,7 +18,6 @@ class Catfact extends react.Component {
         <Container className="justify-content-center">
           <Carousel
             className="justify-content-center"
-            style={{ width: "30rem", margin: "auto" }}
           >
             {catFact.map((fact, index) => {
               return (
@@ -26,9 +25,9 @@ class Catfact extends react.Component {
                   <Card
                   className="shadow p-3 mb-5 rounded border"
                   style={{
-                    width: "30rem",
+  
                     background: "#fce5e4",
-                    fontFamily: "Balsamiq Sans, cursive",
+                    fontFamily: "Permanent Marker",
                   }}
                   >
                     <Card.Img variant="top" src={fact.image} />
