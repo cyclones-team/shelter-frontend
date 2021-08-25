@@ -9,7 +9,7 @@ class Animal extends react.Component {
       endangeredData: [
         {
          
-          "name": "rhinelander rabbit",
+          "name": "Rhinelander rabbit",
           "picture": "https://petkeen.com/wp-content/uploads/2021/02/rhinelander-rabbit-eating_Beachbird_Shutterstock-e1620230866142.jpg",
           "description": "The fully arched rabbit breed is one of the most famous breeds, and is easily recognizable by the shape of its fully arched body, which gives it a confident appearance. These rabbits always look energetic and ready to go, standing ready on their toes"
         },
@@ -24,18 +24,18 @@ class Animal extends react.Component {
             "description": "The Sussex is a British breed of dual-purpose chicken, reared both for its meat and for its eggs. Eight colours are recognised for both standard-sized and bantam fowl. A breed association, the Sussex Breed Club, was organised in 1903"
         },
         {
-            "name": "budgie parrot",
+            "name": "Budgie parrot",
             "picture": "https://st3.depositphotos.com/1752368/12954/i/950/depositphotos_129540366-stock-photo-the-colorful-budgies-are-on.jpg",
             "description": "The budgerigar, also known as the common parakeet or shell parakeet, is a small"
           
         },
         {
-            "name": "gray squirrel",
+            "name": "Gray squirrel",
             "picture": "https://inaturalist-open-data.s3.amazonaws.com/photos/18767/large.jpg?1545403968",
             "description": "The eastern gray squirrel (Sciurus carolinensis), also known as the grey squirrel depending on region, is a tree squirrel in the genus Sciurus."
         },
         {
-            "name": "pony",
+            "name": "Pony",
             "picture": "https://www.animals-wd.com/wp-content/uploads/2020/06/%D8%AD%D9%8A%D9%88%D8%A7%D9%86-%D8%A7%D9%84%D8%A8%D9%88%D9%86%D9%8A.jpg",
             "description": "A pony is a small horse. Depending on the context, a pony may be a horse that is under an approximate or exact height at the withers, or a small horse with a specific conformation and temperament"
         },
@@ -66,7 +66,7 @@ class Animal extends react.Component {
                   style={{
                     width: "20rem",
                     background: "#fce5e4",
-                    fontFamily: "Balsamiq Sans, cursive",
+                    fontFamily: "Permanent Marker",
                   }}>
                 <Card.Img variant="top" src={element.picture} height="200rem"  />
                 <Card.Body>
